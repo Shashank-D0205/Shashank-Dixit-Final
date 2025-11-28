@@ -57,6 +57,7 @@ class StringConst {
   static const String ABOUT_DEV_CATCH_LINE_1 = "I specialize in implementing  ";
   static const String ABOUT_DEV_CATCH_LINE_2 =
       "reliable cloud automation.";
+
   static const String ABOUT_DEV_CATCH_LINE_3 = "& scalable pipelines";
   static const String ABOUT_DEV_CATCH_LINE_4 = "I posses strong";
   static const String ABOUT_DEV_CATCH_LINE_5 = "problem solving skills in DevOps & Cloud.";
