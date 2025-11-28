@@ -128,15 +128,17 @@ class Data {
   ];
 
   static List<String> mobileTechnologies = [
-    "Android",
-    "Dart",
-    "Jetpack Compose",
-    "Flutter",
+    "AWS",
+    "Terraform",
+    "Ansible",
+    "Kubernetes",
+    "Docker",
+    "CI/CD(Github Actions, Jenkins)"
   ];
 
   static List<String> otherTechnologies = [
-    "Git",
-    "AWS",
+    "Android",
+    "Flutter",
     "Google Cloud",
     "MySQL",
     "C++",
@@ -144,7 +146,6 @@ class Data {
     "GCC",
     "Visual Studio",
     "Arduino",
-
   ];
   static List<SocialData> socialData1 = [
     SocialData(
