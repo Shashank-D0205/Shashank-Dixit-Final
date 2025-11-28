@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class AppDrawer extends StatefulWidget {
-  AppDrawer({
+  const AppDrawer({super.key, 
     required this.menuList,
     required this.selectedItemRouteName,
     required this.controller,
@@ -82,7 +82,7 @@ class _AppDrawerState extends State<AppDrawer>
       color: AppColors.grey500,
       fontSize: Sizes.TEXT_SIZE_10,
     );
-    return Container(
+    return SizedBox(
       width: widget.width ?? widthOfScreen(context),
       height: heightOfScreen(context),
       child: Drawer(
@@ -95,21 +95,21 @@ class _AppDrawerState extends State<AppDrawer>
               Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(Sizes.PADDING_24),
+                    padding: const EdgeInsets.all(Sizes.PADDING_24),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        AppLogo(
+                        const AppLogo(
                           fontSize: Sizes.TEXT_SIZE_40,
                           titleColor: AppColors.accentColor,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         InkWell(
                           onTap: widget.onClose ??
                                   () {
                                 Navigator.pop(context);
                               },
-                          child: Icon(
+                          child: const Icon(
                             FeatherIcons.x,
                             size: Sizes.ICON_SIZE_30,
                             color: AppColors.accentColor,
@@ -122,10 +122,10 @@ class _AppDrawerState extends State<AppDrawer>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Spacer(flex: 2),
+                        const Spacer(flex: 2),
                         ..._buildMenuList(
                             menuList: widget.menuList, context: context),
-                        Spacer(flex: 2),
+                        const Spacer(flex: 2),
                       ],
                     ),
                   ),
@@ -133,7 +133,7 @@ class _AppDrawerState extends State<AppDrawer>
                     StringConst.COPYRIGHT,
                     style: style,
                   ),
-                  SpaceH20(),
+                  const SpaceH20(),
                 ],
               ),
               Positioned(

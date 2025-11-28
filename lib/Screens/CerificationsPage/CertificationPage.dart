@@ -13,7 +13,7 @@ import 'CertificationCard.dart';
 
 class CertificationPage extends StatefulWidget {
   static const String certificationPageRoute = StringConst.CERTIFICATION_PAGE;
-  const CertificationPage({Key? key}) : super(key: key);
+  const CertificationPage({super.key});
 
   @override
   _CertificationPageState createState() => _CertificationPageState();
@@ -91,7 +91,7 @@ class _CertificationPageState extends State<CertificationPage>
             headingTextController: _headingTextController,
           ),
           VisibilityDetector(
-            key: Key('certifications'),
+            key: const Key('certifications'),
             onVisibilityChanged: (visibilityInfo) {
               double visiblePercentage = visibilityInfo.visibleFraction * 100;
               if (visiblePercentage > 40) {
@@ -120,8 +120,8 @@ class _CertificationPageState extends State<CertificationPage>
               ),
             ),
           ),
-          CustomSpacer(heightFactor: 0.15),
-          SimpleFooter(),
+          const CustomSpacer(heightFactor: 0.15),
+          const SimpleFooter(),
         ],
       ),
     );

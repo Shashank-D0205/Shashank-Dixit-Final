@@ -5,7 +5,7 @@ import 'package:shashank_dixit/values/values.dart';
 
 class AnimatedBubbleButton extends StatefulWidget {
   AnimatedBubbleButton({
-    Key? key,
+    super.key,
     this.child,
     this.title = '',
     this.titleStyle,
@@ -25,7 +25,7 @@ class AnimatedBubbleButton extends StatefulWidget {
     this.targetOffset = const Offset(0.1, 0),
     this.controller,
     this.controlsOwnAnimation = true,
-  }) : super(key: key);
+  });
 
   final String title;
   final TextStyle? titleStyle;
@@ -121,7 +121,7 @@ class _AnimatedBubbleButtonState extends State<AnimatedBubbleButton>
         child: InkWell(
           hoverColor: Colors.transparent,
           onTap: widget.onTap,
-          child: Container(
+          child: SizedBox(
             width: widget.targetWidth,
             height: widget.height,
             child: Stack(
@@ -155,7 +155,7 @@ class _AnimatedBubbleButtonState extends State<AnimatedBubbleButton>
                               textAlign: TextAlign.center,
                               style: widget.titleStyle ?? buttonStyle,
                             ),
-                            SpaceW8(),
+                            const SpaceW8(),
                             Image.asset(
                               ImagePath.ARROW_RIGHT,
                               color: widget.imageColor,

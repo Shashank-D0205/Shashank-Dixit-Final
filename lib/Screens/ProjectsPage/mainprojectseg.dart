@@ -8,7 +8,7 @@ import '../screen_utils.dart';
 import '../functions.dart';
 
 class MainProjects extends StatefulWidget {
-  const MainProjects({Key? key}) : super(key: key);
+  const MainProjects({super.key});
 
   @override
   _MainProjectsState createState() => _MainProjectsState();
@@ -22,7 +22,7 @@ class _MainProjectsState extends State<MainProjects>
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
     );
     super.initState();
   }
@@ -57,7 +57,7 @@ class _MainProjectsState extends State<MainProjects>
     );
 
     return VisibilityDetector(
-      key: Key('noteworthy-projects'),
+      key: const Key('noteworthy-projects'),
       onVisibilityChanged: (visibilityInfo) {
         double visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage > 25) {
@@ -65,7 +65,7 @@ class _MainProjectsState extends State<MainProjects>
         }
       },
       child: Container(
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // AnimatedTextSlideBoxTransition(
@@ -118,7 +118,7 @@ class _MainProjectsState extends State<MainProjects>
               : null),
         ),
       );
-      items.add(SizedBox(height: 40,));
+      items.add(const SizedBox(height: 40,));
     }
 
     return items;
@@ -127,7 +127,7 @@ class _MainProjectsState extends State<MainProjects>
 
 class NoteWorthyProjectItem extends StatelessWidget {
   const NoteWorthyProjectItem({
-    Key? key,
+    super.key,
     required this.number,
     required this.projectName,
     required this.controller,
@@ -137,7 +137,7 @@ class NoteWorthyProjectItem extends StatelessWidget {
     this.sourceStyle,
     this.onSourceTap,
     this.onProjectNameTap,
-  }) : super(key: key);
+  });
 
   final String number;
   final String source;
@@ -182,7 +182,7 @@ class NoteWorthyProjectItem extends StatelessWidget {
             text: number,
             textStyle: numberStyle ?? defaultNumberStyle,
           ),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           InkWell(
             onTap: onSourceTap,
             hoverColor: Colors.transparent,
@@ -192,7 +192,7 @@ class NoteWorthyProjectItem extends StatelessWidget {
               textStyle: sourceStyle ?? defaultSourceStyle,
             ),
           ),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           Flexible(
             child: AnimatedLineThroughText(
               maxLines: 3,

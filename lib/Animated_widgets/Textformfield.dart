@@ -5,7 +5,7 @@ import '../values/values.dart';
 
 class PortTextFormField extends StatelessWidget {
   PortTextFormField({
-    Key? key,
+    super.key,
     this.title = '',
     this.titleStyle,
     this.hasTitle = true,
@@ -27,7 +27,7 @@ class PortTextFormField extends StatelessWidget {
     this.filled = false,
     this.maxLines = 1,
     this.controller,
-  }) : super(key: key);
+  });
 
   final TextStyle? textStyle;
   final TextStyle? hintTextStyle;
@@ -58,7 +58,7 @@ class PortTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        hasTitle ? Text(title, style: titleStyle) : SizedBox(height: 0,width: 0,),
+        hasTitle ? Text(title, style: titleStyle) : const SizedBox(height: 0,width: 0,),
         TextFormField(
           style: textStyle ??
               textTheme.bodyLarge?.copyWith(

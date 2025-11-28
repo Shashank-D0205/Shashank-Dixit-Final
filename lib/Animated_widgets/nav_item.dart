@@ -17,7 +17,7 @@ class NavItemData {
 }
 
 class NavItem extends StatefulWidget {
-  NavItem({
+  const NavItem({super.key, 
     required this.title,
     required this.route,
     required this.index,
@@ -127,7 +127,7 @@ class _NavItemState extends State<NavItem> {
         children: [
           AnimatedOpacity(
             opacity: _hoveringUnselectedNavItemMobile ? 1 : 0,
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             curve: Curves.ease,
             child: _buildNavItemIndex(
               index: widget.index,

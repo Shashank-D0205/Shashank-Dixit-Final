@@ -310,5 +310,5 @@ class DocumentPath {
   // static const String docDir = "assets/documents";
 
   //Docs
-  static const String CV = "$docDir/Resume_Shashank_Dixit.pdf";
+  static const String CV = "$docDir/Resume_ShashankDixit.pdf";
 }

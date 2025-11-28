@@ -58,7 +58,7 @@ class RouteConfiguration {
     ),
     Path(
       r'^' + HomeMain.HomeMainRoute,
-          (context, matches) => HomeMain(),
+          (context, matches) => const HomeMain(),
     ),
   ];
 
@@ -113,9 +113,9 @@ class RouteConfiguration {
 
 class NoAnimationMaterialPageRoute<T> extends MaterialPageRoute<T> {
   NoAnimationMaterialPageRoute({
-    required WidgetBuilder builder,
-    RouteSettings? settings,
-  }) : super(builder: builder, settings: settings);
+    required super.builder,
+    super.settings,
+  });
 
   @override
   Widget buildTransitions(

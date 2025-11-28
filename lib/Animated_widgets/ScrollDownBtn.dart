@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shashank_dixit/values/values.dart';
 
 class ScrollDownButton extends StatelessWidget {
-  const ScrollDownButton({Key? key}) : super(key: key);
+  const ScrollDownButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class ScrollDownButton extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Image.asset(ImagePath.ARROW_DOWN, height: 24,)
       ],
     );

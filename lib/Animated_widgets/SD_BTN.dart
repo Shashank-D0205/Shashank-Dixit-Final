@@ -5,8 +5,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SdBtn extends StatefulWidget {
-  SdBtn({
-    Key? key,
+  const SdBtn({
+    super.key,
     required this.title,
     this.titleStyle,
     this.width = Sizes.WIDTH_120,
@@ -24,7 +24,7 @@ class SdBtn extends StatefulWidget {
     this.curve = Curves.fastOutSlowIn,
     this.buttonStyle,
     this.isLoading = false,
-  }) : super(key: key);
+  });
 
   final String title;
   final TextStyle? titleStyle;
@@ -73,8 +73,8 @@ class _SdBtnState extends State<SdBtn>
       });
 
     _offsetAnimation = Tween<Offset>(
-      begin: Offset(0, 0),
-      end: Offset(0.5, 0),
+      begin: const Offset(0, 0),
+      end: const Offset(0.5, 0),
     ).animate(_controller)
       ..addListener(() {
         setState(() {});
@@ -97,9 +97,9 @@ class _SdBtnState extends State<SdBtn>
     );
     final ButtonStyle defaultButtonStyle = ElevatedButton.styleFrom(
       foregroundColor: widget.onHoverColor, backgroundColor: widget.onHoverColor,
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(0)),
+        borderRadius: const BorderRadius.all(Radius.circular(0)),
         side: BorderSide(
           width: 1,
           color: widget.borderColor,
@@ -109,7 +109,7 @@ class _SdBtnState extends State<SdBtn>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         height: widget.height,
         child: ElevatedButton(
@@ -166,7 +166,7 @@ class _SdBtnState extends State<SdBtn>
             widget.title,
             style: widget.titleStyle ?? style,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           SlideTransition(
             position: _offsetAnimation,
             child: widget.isLoading

@@ -14,11 +14,11 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedFooter extends StatefulWidget {
   const AnimatedFooter({
-    Key? key,
+    super.key,
     this.height,
     this.width,
     this.backgroundColor = AppColors.black,
-  }) : super(key: key);
+  });
 
   final double? width;
   final double? height;
@@ -36,7 +36,7 @@ class _AnimatedFooterState extends State<AnimatedFooter>
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
     super.initState();
   }
@@ -75,7 +75,7 @@ class _AnimatedFooterState extends State<AnimatedFooter>
       height: widget.height ?? assignHeight(context, 0.8),
       color: widget.backgroundColor,
       child: VisibilityDetector(
-        key: Key('animated-footer'),
+        key: const Key('animated-footer'),
         onVisibilityChanged: (visibilityInfo) {
           double visiblePercentage = visibilityInfo.visibleFraction * 100;
           if (visiblePercentage > 25) {
@@ -85,8 +85,8 @@ class _AnimatedFooterState extends State<AnimatedFooter>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Spacer(flex: 2),
-            Container(
+            const Spacer(flex: 2),
+            SizedBox(
               height: circleImageSize,
               child: Stack(
                 children: [
@@ -125,7 +125,7 @@ class _AnimatedFooterState extends State<AnimatedFooter>
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             AnimatedPositionedText(
               text: StringConst.AVAILABLE_FOR_WORK,
               textAlign: TextAlign.center,
@@ -136,26 +136,26 @@ class _AnimatedFooterState extends State<AnimatedFooter>
                 curve: Curves.fastOutSlowIn,
               ),
             ),
-            SpaceH40(),
+            const SpaceH40(),
             AnimatedBubbleButton(
               title: StringConst.SAY_HELLO.toUpperCase(),
               onTap: () {
                 Navigator.pushNamed(context, ContactPage.contactPageRoute);
               },
             ),
-            Spacer(flex: 3),
+            const Spacer(flex: 3),
             ResponsiveBuilder(
               builder: (context, sizingInformation) {
                 double screenWidth = sizingInformation.screenSize.width;
-                if (screenWidth <= RefinedBreakpoints().tabletNormal) {
-                  return Column(
+                if (screenWidth <= const RefinedBreakpoints().tabletNormal) {
+                  return const Column(
                     children: [
                       SimpleFooterSm(),
                       SpaceH8(),
                     ],
                   );
                 } else {
-                  return Column(
+                  return const Column(
                     children: [
                       SimpleFooterLg(),
                       SpaceH8(),
@@ -164,7 +164,7 @@ class _AnimatedFooterState extends State<AnimatedFooter>
                 }
               },
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

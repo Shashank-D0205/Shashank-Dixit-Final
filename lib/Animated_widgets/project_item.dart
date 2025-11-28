@@ -55,7 +55,7 @@ class ProjectItemData {
 
 class ProjectData extends StatelessWidget {
   const ProjectData({
-    Key? key,
+    super.key,
     required this.projectNumber,
     required this.title,
     required this.subtitle,
@@ -69,7 +69,7 @@ class ProjectData extends StatelessWidget {
     this.indicatorWidth = Sizes.WIDTH_150,
     this.indicatorMargin,
     this.leadingMargin,
-  }) : super(key: key);
+  });
 
   final String projectNumber;
   final String title;
@@ -105,7 +105,7 @@ class ProjectData extends StatelessWidget {
                     duration: duration,
                     curve: curve,
                   ),
-                  SizedBox(width: 4,),
+                  const SizedBox(width: 4,),
                   Text(
                     projectNumber,
                     style: projectNumberStyle,
@@ -113,12 +113,12 @@ class ProjectData extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 30,),
+            const SizedBox(width: 30,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: titleStyle),
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
                 Text(subtitle, style: subtitleStyle),
               ],
             ),
@@ -142,7 +142,7 @@ const double heightOfButtonSm = startWidthOfButtonSm;
 
 class ProjectItemLg extends StatefulWidget {
   const ProjectItemLg({
-    Key? key,
+    super.key,
     required this.projectNumber,
     required this.title,
     required this.subtitle,
@@ -161,7 +161,7 @@ class ProjectItemLg extends StatefulWidget {
     this.duration = const Duration(milliseconds: 300),
     this.padding,
     this.onTap,
-  }) : super(key: key);
+  });
 
   /// signifies the position of the project in the list
   final String projectNumber;
@@ -286,7 +286,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
       md: projectItemWidth / 3,
       sm: projectItemWidth / 2.8,
     );
-    Animation<double> _animation = Tween<double>(
+    Animation<double> animation = Tween<double>(
       begin: responsiveSize(
         context,
         -imageWidth * 2.2,
@@ -347,7 +347,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
+      child: SizedBox(
         height: projectItemHeight,
         width: projectItemWidth,
         child: Stack(
@@ -367,7 +367,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
                     opacity: _isHovering ? 1.0 : 0.5,
                     duration: widget.duration,
                     child: ProjectData(
-                      duration: Duration(milliseconds: 400),
+                      duration: const Duration(milliseconds: 400),
                       projectNumber: widget.projectNumber,
                       indicatorWidth: _isHovering
                           ? assignWidth(context, 0.18)
@@ -398,7 +398,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
               child: AnimatedContainer(
                 width: _isHovering ? containerWidth : 0,
                 color: widget.containerColor,
-                duration: Duration(milliseconds: 450),
+                duration: const Duration(milliseconds: 450),
                 height: containerHeight,
                 curve: Curves.fastOutSlowIn,
               ),
@@ -406,7 +406,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
             Positioned(
               right: 0,
               child: Transform(
-                origin: Offset(_animation.value, 0),
+                origin: Offset(animation.value, 0),
                 transform: Matrix4.identity()
                   ..setEntry(3, 2, 0.0095)
                   ..rotateY(0.075),
@@ -447,7 +447,7 @@ class _ProjectItemLgState extends State<ProjectItemLg>
 
 class ProjectItemSm extends StatefulWidget {
   const ProjectItemSm({
-    Key? key,
+    super.key,
     required this.projectNumber,
     required this.title,
     required this.subtitle,
@@ -463,7 +463,7 @@ class ProjectItemSm extends StatefulWidget {
     this.imageHeight,
     this.duration = const Duration(milliseconds: 350),
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String projectNumber;
   final String title;
@@ -567,11 +567,11 @@ class _ProjectItemSmState extends State<ProjectItemSm>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
+      child: SizedBox(
         width: projectItemWidth,
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: heightOfProjectImageCover +
                   (heightOfColoredContainer - positionOfColoredContainer),
               child: Stack(
@@ -601,7 +601,7 @@ class _ProjectItemSmState extends State<ProjectItemSm>
                 ],
               ),
             ),
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -628,9 +628,9 @@ class _ProjectItemSmState extends State<ProjectItemSm>
                 ),
               ],
             ),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
             Container(
-              margin: EdgeInsets.only(right: 30),
+              margin: const EdgeInsets.only(right: 30),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: AnimatedBubbleButton(

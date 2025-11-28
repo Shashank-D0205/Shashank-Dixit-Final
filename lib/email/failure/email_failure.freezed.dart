@@ -85,8 +85,8 @@ _$ServerErrorCopyWithImpl<$Res>;
 class _$ServerErrorCopyWithImpl<$Res> extends _$EmailFailureCopyWithImpl<$Res>
 implements $ServerErrorCopyWith<$Res> {
 _$ServerErrorCopyWithImpl(
-ServerError _value, $Res Function(ServerError) _then)
-    : super(_value, (v) => _then(v as ServerError));
+ServerError value, $Res Function(ServerError) then)
+    : super(value, (v) => then(v as ServerError));
 
 @override
 ServerError get _value => super._value as ServerError;
@@ -170,8 +170,8 @@ _$NetworkErrorCopyWithImpl<$Res>;
 class _$NetworkErrorCopyWithImpl<$Res> extends _$EmailFailureCopyWithImpl<$Res>
 implements $NetworkErrorCopyWith<$Res> {
 _$NetworkErrorCopyWithImpl(
-NetworkError _value, $Res Function(NetworkError) _then)
-    : super(_value, (v) => _then(v as NetworkError));
+NetworkError value, $Res Function(NetworkError) then)
+    : super(value, (v) => then(v as NetworkError));
 
 @override
 NetworkError get _value => super._value as NetworkError;

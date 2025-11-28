@@ -4,7 +4,7 @@ import 'package:shashank_dixit/values/values.dart';
 
 
 class CertificationCard extends StatefulWidget {
-  CertificationCard({
+  const CertificationCard({super.key, 
     required this.imageUrl,
     required this.title,
     required this.subtitle,
@@ -73,7 +73,7 @@ class _CertificationCardState extends State<CertificationCard>
     ).animate(
       CurvedAnimation(
         parent: _portfolioCoverController,
-        curve: Interval(
+        curve: const Interval(
           0.0,
           1.0,
           curve: Curves.easeIn,
@@ -94,7 +94,7 @@ class _CertificationCardState extends State<CertificationCard>
   Widget build(BuildContext context) {
     return InkWell(
       onTap: widget.onTap,
-      child: Container(
+      child: SizedBox(
         width: widget.width,
         height: widget.height,
         child: MouseRegion(
@@ -119,7 +119,7 @@ class _CertificationCardState extends State<CertificationCard>
                   child: _buildCardInfo(),
                 ),
               )
-                  : SizedBox(height: 0,width: 0,),
+                  : const SizedBox(height: 0,width: 0,),
               //show info instantly if it is a mobile or tablet device
               widget.isMobileOrTablet
                   ? Container(
@@ -128,7 +128,7 @@ class _CertificationCardState extends State<CertificationCard>
                 color: widget.hoverColor.withOpacity(0.15),
                 child: Column(
                   children: [
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                     SdBtn(
                       height: Sizes.HEIGHT_36,
                       hasIcon: false,
@@ -139,12 +139,12 @@ class _CertificationCardState extends State<CertificationCard>
                       title: widget.actionTitle.toUpperCase(),
                       onPressed: widget.onTap,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     // SpaceH20(),
                   ],
                 ),
               )
-                  : SizedBox(height: 0,width: 0,),
+                  : const SizedBox(height: 0,width: 0,),
             ],
           ),
         ),
@@ -168,7 +168,7 @@ class _CertificationCardState extends State<CertificationCard>
     ThemeData theme = Theme.of(context);
     return Column(
       children: [
-        Spacer(flex: 1),
+        const Spacer(flex: 1),
         Text(
           widget.title,
           textAlign: TextAlign.center,
@@ -177,7 +177,7 @@ class _CertificationCardState extends State<CertificationCard>
                 color: AppColors.black,
               ),
         ),
-        SizedBox(height: 4,),
+        const SizedBox(height: 4,),
         Text(
           widget.subtitle,
           textAlign: TextAlign.center,
@@ -187,7 +187,7 @@ class _CertificationCardState extends State<CertificationCard>
                 fontSize: Sizes.TEXT_SIZE_16,
               ),
         ),
-        SizedBox(height: 16,),
+        const SizedBox(height: 16,),
         SdBtn(
           height: Sizes.HEIGHT_36,
           hasIcon: false,
@@ -198,8 +198,8 @@ class _CertificationCardState extends State<CertificationCard>
           title: widget.actionTitle.toUpperCase(),
           onPressed: widget.onTap,
         ),
-        SizedBox(height: 4,),
-        Spacer(flex: 1),
+        const SizedBox(height: 4,),
+        const Spacer(flex: 1),
       ],
     );
   }

@@ -18,16 +18,16 @@ import '../onboardingsc.dart';
 
 class HomeMain extends StatefulWidget {
   static const String HomeMainRoute = StringConst.HOME_PAGE;
-  HomeMain({
-    Key ? key,
-  }) : super(key: key);
+  const HomeMain({
+    super.key,
+  });
   @override
   _HomeMainState createState() => _HomeMainState();
 }
 
 class _HomeMainState extends State<HomeMain> with TickerProviderStateMixin{
   GlobalKey key = GlobalKey();
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   late AnimationController _viewProjectsController;
   late AnimationController _recentWorksController;
   late AnimationController _slideTextController;
@@ -38,7 +38,7 @@ class _HomeMainState extends State<HomeMain> with TickerProviderStateMixin{
     _arguments = NavigationArguments();
     _viewProjectsController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
     _slideTextController = AnimationController(
       vsync: this,
@@ -113,9 +113,9 @@ void dispose(){
           ),
           children: [
             PortofolioHP_header(ProjectsKey: key, controller: _slideTextController),
-            CustomSpacer(heightFactor: 0.1,),
+            const CustomSpacer(heightFactor: 0.1,),
             VisibilityDetector(
-                key: Key('recent-projects'),
+                key: const Key('recent-projects'),
                 onVisibilityChanged: (visibilityInfo){
                   double visiblePercentage = visibilityInfo.visibleFraction * 100;
                   if (visiblePercentage > 45) {
@@ -137,11 +137,11 @@ void dispose(){
                             height: 2,
                           )
                       ),
-                      SizedBox(height: 16,),
+                      const SizedBox(height: 16,),
                       AnimatedPositionedText(
                           controller: CurvedAnimation(
                               parent: _recentWorksController,
-                              curve: Interval(0.6, 1,curve: Curves.fastOutSlowIn)
+                              curve: const Interval(0.6, 1,curve: Curves.fastOutSlowIn)
                           ),
                           text: StringConst.SELECTION,
                           textStyle: textTheme.bodyLarge?.copyWith(
@@ -158,11 +158,11 @@ void dispose(){
                   ),
                 ),
             ),
-            CustomSpacer(heightFactor: 0.1,),
+            const CustomSpacer(heightFactor: 0.1,),
             ResponsiveBuilder(builder: (context,sizingInformation){
               double screenWidth = sizingInformation.screenSize.width;
 
-              if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+              if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
                 return Column(
                   children: _buildProjectsForMobile(
                     data: Data.recentWorks,
@@ -173,7 +173,7 @@ void dispose(){
 
               }
               else{
-                return Container(
+                return SizedBox(
                   height: (subHeight * (Data.recentWorks.length)) + extra,
                   child: Stack(
                     children: _buildRecentProjects(
@@ -186,7 +186,7 @@ void dispose(){
               }
             }
             ),
-            CustomSpacer(heightFactor: 0.1,),
+            const CustomSpacer(heightFactor: 0.1,),
             Container(
               margin: margin,
               child: Column(
@@ -200,14 +200,14 @@ void dispose(){
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  const SizedBox(height: 16,),
                   MouseRegion(
                     onEnter: (e) => _viewProjectsController.forward(),
                     onExit: (e) => _viewProjectsController.reverse(),
                     child: AnimatedSlideTranstion(
                       controller: _viewProjectsController,
-                      beginOffset: Offset(0, 0),
-                      targetOffset: Offset(0.05, 0),
+                      beginOffset: const Offset(0, 0),
+                      targetOffset: const Offset(0.05, 0),
                       child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, ProjectsPage.projectsPageroute);
@@ -221,7 +221,7 @@ void dispose(){
                               StringConst.VIEW_ALL_PROJECTS.toLowerCase(),
                               style: textButtonStyle,
                             ),
-                            SizedBox(width: 12,),
+                            const SizedBox(width: 12,),
                             Container(
                               margin: EdgeInsets.only(
                                   top: textButtonStyle!.fontSize! / 2),
@@ -238,8 +238,8 @@ void dispose(){
                 ],
               ),
             ),
-            CustomSpacer(heightFactor: 0.15,),
-            AnimatedFooter(),
+            const CustomSpacer(heightFactor: 0.15,),
+            const AnimatedFooter(),
           ],
         )
     );
@@ -306,7 +306,7 @@ void dispose(){
           ),
         ),
       );
-      items.add(CustomSpacer(
+      items.add(const CustomSpacer(
         heightFactor: 0.10,
       ));
     }

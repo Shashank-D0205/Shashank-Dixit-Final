@@ -2,7 +2,7 @@ import '../Screens/screen_utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomSpacer extends StatelessWidget {
-  const CustomSpacer({ Key? key, this.widthFactor, this.heightFactor, }) : super(key: key);
+  const CustomSpacer({ super.key, this.widthFactor, this.heightFactor, });
 
   final double? widthFactor;
   final double? heightFactor;

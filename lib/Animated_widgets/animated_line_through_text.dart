@@ -5,7 +5,7 @@ import 'animated_text_slide_box_transition.dart';
 
 class AnimatedLineThroughText extends StatefulWidget {
   const AnimatedLineThroughText({
-    Key? key,
+    super.key,
     required this.text,
     required this.textStyle,
     this.controller,
@@ -28,8 +28,7 @@ class AnimatedLineThroughText extends StatefulWidget {
     this.hasSlideBoxAnimation = false,
   })  : assert(hasSlideBoxAnimation == true
       ? controller != null
-      : controller == null),
-        super(key: key);
+      : controller == null);
 
   final String text;
   final Duration duration;
@@ -169,7 +168,7 @@ class _AnimatedLineThroughTextState extends State<AnimatedLineThroughText>
                       : TextDecoration.none,
                 ),
               )
-                  : SizedBox(width: 0,height: 0,),
+                  : const SizedBox(width: 0,height: 0,),
               Positioned(
                 top: (textHeight / 2) - widget.lineThickness,
                 child: Container(
@@ -187,7 +186,7 @@ class _AnimatedLineThroughTextState extends State<AnimatedLineThroughText>
                 ),
               ),
               widget.hasSlideBoxAnimation
-                  ? SizedBox(width: 0,height: 0,)
+                  ? const SizedBox(width: 0,height: 0,)
                   : Text(
                 widget.text,
                 style: _isHovering

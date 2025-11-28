@@ -126,8 +126,8 @@ $Res call({String name, String email, String subject, String message});
 /// @nodoc
 class _$SendEmailCopyWithImpl<$Res> extends _$EmailEventCopyWithImpl<$Res>
 implements $SendEmailCopyWith<$Res> {
-_$SendEmailCopyWithImpl(SendEmail _value, $Res Function(SendEmail) _then)
-    : super(_value, (v) => _then(v as SendEmail));
+_$SendEmailCopyWithImpl(SendEmail value, $Res Function(SendEmail) then)
+    : super(value, (v) => then(v as SendEmail));
 
 @override
 SendEmail get _value => super._value as SendEmail;
@@ -364,8 +364,8 @@ _$InitialCopyWithImpl<$Res>;
 /// @nodoc
 class _$InitialCopyWithImpl<$Res> extends _$EmailStateCopyWithImpl<$Res>
 implements $InitialCopyWith<$Res> {
-_$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
-    : super(_value, (v) => _then(v as Initial));
+_$InitialCopyWithImpl(Initial value, $Res Function(Initial) then)
+    : super(value, (v) => then(v as Initial));
 
 @override
 Initial get _value => super._value as Initial;
@@ -458,8 +458,8 @@ _$SendingEmailCopyWithImpl<$Res>;
 class _$SendingEmailCopyWithImpl<$Res> extends _$EmailStateCopyWithImpl<$Res>
 implements $SendingEmailCopyWith<$Res> {
 _$SendingEmailCopyWithImpl(
-SendingEmail _value, $Res Function(SendingEmail) _then)
-    : super(_value, (v) => _then(v as SendingEmail));
+SendingEmail value, $Res Function(SendingEmail) then)
+    : super(value, (v) => then(v as SendingEmail));
 
 @override
 SendingEmail get _value => super._value as SendingEmail;
@@ -550,8 +550,8 @@ _$FailureCopyWithImpl<$Res>;
 /// @nodoc
 class _$FailureCopyWithImpl<$Res> extends _$EmailStateCopyWithImpl<$Res>
 implements $FailureCopyWith<$Res> {
-_$FailureCopyWithImpl(Failure _value, $Res Function(Failure) _then)
-    : super(_value, (v) => _then(v as Failure));
+_$FailureCopyWithImpl(Failure value, $Res Function(Failure) then)
+    : super(value, (v) => then(v as Failure));
 
 @override
 Failure get _value => super._value as Failure;
@@ -645,8 +645,8 @@ class _$EmailSentSuccessFullyCopyWithImpl<$Res>
 extends _$EmailStateCopyWithImpl<$Res>
 implements $EmailSentSuccessFullyCopyWith<$Res> {
 _$EmailSentSuccessFullyCopyWithImpl(
-EmailSentSuccessFully _value, $Res Function(EmailSentSuccessFully) _then)
-    : super(_value, (v) => _then(v as EmailSentSuccessFully));
+EmailSentSuccessFully value, $Res Function(EmailSentSuccessFully) then)
+    : super(value, (v) => then(v as EmailSentSuccessFully));
 
 @override
 EmailSentSuccessFully get _value => super._value as EmailSentSuccessFully;

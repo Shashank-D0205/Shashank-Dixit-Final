@@ -10,10 +10,10 @@ const double spacing = 20;
 
 class TechnologySection extends StatelessWidget {
   const TechnologySection({
-    Key? key,
+    super.key,
     required this.controller,
     required this.width,
-  }) : super(key: key);
+  });
 
   final AnimationController controller;
 
@@ -26,13 +26,13 @@ class TechnologySection extends StatelessWidget {
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.black,
     );
-    return Container(
+    return SizedBox(
       width: width,
       child: ResponsiveBuilder(
         builder: (context, sizingInformation) {
           double screenWidth = sizingInformation.screenSize.width;
 
-          if (screenWidth < RefinedBreakpoints().tabletNormal) {
+          if (screenWidth < const RefinedBreakpoints().tabletNormal) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,7 +42,7 @@ class TechnologySection extends StatelessWidget {
                   text: StringConst.MOBILE_TECH,
                   textStyle: titleStyle,
                 ),
-                SpaceH20(),
+                const SpaceH20(),
                 Wrap(
                   direction: Axis.vertical,
                   spacing: 20,
@@ -53,14 +53,14 @@ class TechnologySection extends StatelessWidget {
                     width: screenWidth,
                   ),
                 ),
-                SpaceH40(),
+                const SpaceH40(),
                 AnimatedTextSlideBoxTransition(
                   controller: controller,
                   width: screenWidth,
                   text: StringConst.OTHER_TECH,
                   textStyle: titleStyle,
                 ),
-                SpaceH20(),
+                const SpaceH20(),
                 Wrap(
                   spacing: (width * 0.1) / 3,
                   runSpacing: 20,
@@ -78,7 +78,7 @@ class TechnologySection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
+                SizedBox(
                   width: width * 0.25,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +89,7 @@ class TechnologySection extends StatelessWidget {
                         text: StringConst.MOBILE_TECH,
                         textStyle: titleStyle,
                       ),
-                      SpaceH20(),
+                      const SpaceH20(),
                       Wrap(
                         direction: Axis.vertical,
                         spacing: spacing,
@@ -104,7 +104,7 @@ class TechnologySection extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     width: (width * 0.75),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +115,7 @@ class TechnologySection extends StatelessWidget {
                           text: StringConst.OTHER_TECH,
                           textStyle: titleStyle,
                         ),
-                        SpaceH20(),
+                        const SpaceH20(),
                         Wrap(
                           spacing: spacing,
                           runSpacing: spacing,
@@ -158,7 +158,7 @@ class TechnologySection extends StatelessWidget {
           child: AnimatedPositionedText(
             controller: CurvedAnimation(
               parent: controller,
-              curve: Interval(
+              curve: const Interval(
                 0.6,
                 1.0,
                 curve: Curves.ease,

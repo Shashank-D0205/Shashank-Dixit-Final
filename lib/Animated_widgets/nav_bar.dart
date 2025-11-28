@@ -13,8 +13,8 @@ import 'package:shashank_dixit/values/values.dart';
 import '../Screens/functions.dart';
 
 class NavBar extends StatelessWidget {
-  NavBar({
-    Key? key,
+  const NavBar({
+    super.key,
     required this.selectedRouteTitle,
     required this.selectedRouteName,
     required this.controller,
@@ -25,7 +25,7 @@ class NavBar extends StatelessWidget {
     this.selectedTitleColor = AppColors.black,
     this.titleColor = AppColors.grey600,
     this.appLogoColor = AppColors.black,
-  }) : super(key: key);
+  });
 
   final String selectedRouteTitle;
   final String selectedRouteName;
@@ -45,7 +45,7 @@ class NavBar extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       double screenWidth = sizingInformation.screenSize.width;
 
-      if (screenWidth <= RefinedBreakpoints().tabletNormal) {
+      if (screenWidth <= const RefinedBreakpoints().tabletNormal) {
         return mobileNavBar(context);
       } else {
         return webNavBar(context);
@@ -63,7 +63,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         children: [
           AppLogo(fontSize: Sizes.TEXT_SIZE_40, titleColor: appLogoColor,),
-          Spacer(),
+          const Spacer(),
           InkWell(
             onTap: onMenuTap,
             child: Icon(
@@ -98,7 +98,7 @@ class NavBar extends StatelessWidget {
           Row(
             children: [
               AppLogo(titleColor: appLogoColor),
-              Spacer(),
+              const Spacer(),
               ..._buildNavItems(context, menuList: Data.menuItems),
               SdBtn(
                 height: Sizes.HEIGHT_36,
@@ -114,7 +114,7 @@ class NavBar extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           hasSideTitle
               ? RotatedBox(
             quarterTurns: 3,
@@ -124,8 +124,8 @@ class NavBar extends StatelessWidget {
               textStyle: style,
             ),
           )
-              : SizedBox(width: 0,height: 0,),
-          Spacer(),
+              : const SizedBox(width: 0,height: 0,),
+          const Spacer(),
         ],
       ),
     );
@@ -153,7 +153,7 @@ class NavBar extends StatelessWidget {
           },
         ),
       );
-      items.add(SpaceW24());
+      items.add(const SpaceW24());
     }
     return items;
   }

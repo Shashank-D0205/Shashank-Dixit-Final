@@ -9,11 +9,11 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 class NextProject extends StatefulWidget {
   const NextProject({
-    Key? key,
+    super.key,
     required this.width,
     required this.nextProject,
     this.navigateToNextProject,
-  }) : super(key: key);
+  });
 
   final ProjectItemData nextProject;
   final double width;
@@ -67,10 +67,10 @@ class _NextProjectState extends State<NextProject>
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    final EdgeInsetsGeometry marginLeft = EdgeInsets.only(left: 16);
+    const EdgeInsetsGeometry marginLeft = EdgeInsets.only(left: 16);
     double projectTitleFontSize =
     responsiveSize(context, 28, 48, md: 40, sm: 36);
-    BorderRadiusGeometry borderRadius = BorderRadius.all(
+    BorderRadiusGeometry borderRadius = const BorderRadius.all(
       Radius.circular(100.0),
     );
     TextStyle? buttonStyle = textTheme.bodyLarge?.copyWith(
@@ -91,7 +91,7 @@ class _NextProjectState extends State<NextProject>
       builder: (context, sizingInformation) {
         double screenWidth = sizingInformation.screenSize.width;
 
-        if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+        if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
           return Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,14 +105,14 @@ class _NextProjectState extends State<NextProject>
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                SpaceH20(),
+                const SpaceH20(),
                 Text(
                   widget.nextProject.title,
                   textAlign: TextAlign.center,
                   style: projectTitleStyle,
                 ),
-                SpaceH20(),
-                Container(
+                const SpaceH20(),
+                SizedBox(
                   width: widthOfScreen(context),
                   height: assignHeight(context, 0.3),
                   child: Image.asset(
@@ -120,15 +120,15 @@ class _NextProjectState extends State<NextProject>
                     fit: BoxFit.cover,
                   ),
                 ),
-                SpaceH30(),
+                const SpaceH30(),
                 AnimatedBubbleButton(
                   title: StringConst.VIEW_PROJECT,
                   color: AppColors.grey100,
                   imageColor: AppColors.black,
                   startBorderRadius: borderRadius,
                   titleStyle: buttonStyle,
-                  startOffset: Offset(0, 0),
-                  targetOffset: Offset(0.1, 0),
+                  startOffset: const Offset(0, 0),
+                  targetOffset: const Offset(0.1, 0),
                   onTap: () {
                     if (widget.navigateToNextProject != null) {
                       widget.navigateToNextProject!();
@@ -139,7 +139,7 @@ class _NextProjectState extends State<NextProject>
             ),
           );
         } else {
-          return Container(
+          return SizedBox(
             height: assignHeight(context, 0.3),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -171,7 +171,7 @@ class _NextProjectState extends State<NextProject>
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
-                            SpaceH20(),
+                            const SpaceH20(),
                             isDisplayMobileOrTablet(context)
                                 ? Text(
                               widget.nextProject.title,
@@ -210,15 +210,15 @@ class _NextProjectState extends State<NextProject>
                           ],
                         ),
                       ),
-                      SpaceH20(),
+                      const SpaceH20(),
                       AnimatedBubbleButton(
                         title: StringConst.VIEW_PROJECT,
                         color: AppColors.grey100,
                         imageColor: AppColors.black,
                         startBorderRadius: borderRadius,
                         titleStyle: buttonStyle,
-                        startOffset: Offset(0, 0),
-                        targetOffset: Offset(0.1, 0),
+                        startOffset: const Offset(0, 0),
+                        targetOffset: const Offset(0.1, 0),
                         onTap: () {
                           if (widget.navigateToNextProject != null) {
                             widget.navigateToNextProject!();
@@ -230,7 +230,7 @@ class _NextProjectState extends State<NextProject>
                 ),
                 SizedBox(width: widget.width * 0.15),
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     width: widget.width * 0.55,
                     height: assignHeight(context, 0.3),
                     child: ScaleTransition(

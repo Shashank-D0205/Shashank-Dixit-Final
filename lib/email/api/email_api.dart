@@ -20,6 +20,7 @@ class EmailApiImpl implements EmailApi {
 
   EmailApiImpl({required this.client});
 
+  @override
   Future<Email> sendEmail({
     required String name,
     required String email,
@@ -42,11 +43,11 @@ class EmailApiImpl implements EmailApi {
       if (response.statusCode == 200) {
         return Email(status: "success");
       } else {
-        throw EmailFailure.serverError();
+        throw const EmailFailure.serverError();
       }
     } catch (e) {
       print("Errorss  ${e.toString()}");
-      throw EmailFailure.serverError();
+      throw const EmailFailure.serverError();
     }
   }
 }

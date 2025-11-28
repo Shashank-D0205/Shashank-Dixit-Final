@@ -18,7 +18,7 @@ import '../../Animated_widgets/custom_spacer.dart';
 
 class ContactPage extends StatefulWidget {
   static const String contactPageRoute = StringConst.CONTACT_PAGE;
-  const ContactPage({Key? key}) : super(key: key);
+  const ContactPage({super.key});
 
   @override
   _ContactPageState createState() => _ContactPageState();
@@ -39,10 +39,10 @@ class _ContactPageState extends State<ContactPage>
   bool _emailHasError = false;
   bool _subjectHasError = false;
   bool _messageHasError = false;
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _subjectController = TextEditingController();
-  TextEditingController _messageController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _subjectController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   @override
   void initState() {
@@ -51,10 +51,10 @@ class _ContactPageState extends State<ContactPage>
       duration: Animations.slideAnimationDurationLong,
     );
     _slideAnimation =
-        Tween<Offset>(begin: Offset(0, 1), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 1), end: const Offset(0, 0)).animate(
           CurvedAnimation(
             parent: _controller,
-            curve: Interval(0.6, 1.0, curve: Curves.ease),
+            curve: const Interval(0.6, 1.0, curve: Curves.ease),
           ),
         );
     emailBloc = getIt<EmailBloc>();
@@ -140,7 +140,7 @@ class _ContactPageState extends State<ContactPage>
     return BlocConsumer<EmailBloc, EmailState>(
         bloc: emailBloc,
         listener: (context, state) {
-          if (state == EmailState.failure()) {
+          if (state == const EmailState.failure()) {
             setState(() {
               isSendingEmail = false;
             });
@@ -159,7 +159,7 @@ class _ContactPageState extends State<ContactPage>
               ),
             );
           }
-          if (state == EmailState.emailSentSuccessFully()) {
+          if (state == const EmailState.emailSentSuccessFully()) {
             setState(() {
               isSendingEmail = false;
             });
@@ -207,13 +207,13 @@ class _ContactPageState extends State<ContactPage>
                           text: StringConst.GET_IN_TOUCH,
                           textStyle: headingStyle,
                         ),
-                        CustomSpacer(heightFactor: 0.05),
+                        const CustomSpacer(heightFactor: 0.05),
                         AnimatedPositionedText(
                           width: contentAreaWidth,
                           controller: CurvedAnimation(
                             parent: _controller,
                             curve:
-                            Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
+                            const Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
                           ),
                           text: StringConst.CONTACT_MSG,
                           maxLines: 5,
@@ -227,7 +227,7 @@ class _ContactPageState extends State<ContactPage>
                             ),
                           ),
                         ),
-                        CustomSpacer(heightFactor: 0.05),
+                        const CustomSpacer(heightFactor: 0.05),
                         SlideTransition(
                           position: _slideAnimation,
                           child: Column(
@@ -245,7 +245,7 @@ class _ContactPageState extends State<ContactPage>
                                   isNameValid(value);
                                 },
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               PortTextFormField(
                                 hasTitle: _emailHasError,
                                 title: StringConst.EMAIL_ERROR_MSG,
@@ -259,7 +259,7 @@ class _ContactPageState extends State<ContactPage>
                                   isEmailValid(value);
                                 },
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               PortTextFormField(
                                 hasTitle: _subjectHasError,
                                 title: StringConst.SUBJECT_ERROR_MSG,
@@ -273,7 +273,7 @@ class _ContactPageState extends State<ContactPage>
                                   isSubjectValid(value);
                                 },
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               PortTextFormField(
                                 hasTitle: _messageHasError,
                                 title: StringConst.MESSAGE_ERROR_MSG,
@@ -289,7 +289,7 @@ class _ContactPageState extends State<ContactPage>
                                   isMessageValid(value);
                                 },
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Align(
                                 alignment: Alignment.topRight,
                                 child: SdBtn(
@@ -307,8 +307,8 @@ class _ContactPageState extends State<ContactPage>
                     ),
                   ),
                 ),
-                CustomSpacer(heightFactor: 0.15),
-                SimpleFooter(),
+                const CustomSpacer(heightFactor: 0.15),
+                const SimpleFooter(),
               ],
             ),
           );
@@ -316,7 +316,7 @@ class _ContactPageState extends State<ContactPage>
   }
 
   bool isTextValid(String value) {
-    if (value.length > 0) {
+    if (value.isNotEmpty) {
       return true;
     }
     return false;

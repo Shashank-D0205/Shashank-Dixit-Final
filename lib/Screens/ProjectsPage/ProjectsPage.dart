@@ -12,7 +12,7 @@ import '../functions.dart';
 
 class ProjectsPage extends StatefulWidget {
   static const String projectsPageroute = StringConst.PROJECTS_PAGE;
-  const ProjectsPage({Key? key}) : super(key: key);
+  const ProjectsPage({super.key});
 
   @override
   _ProjectsPageState createState() => _ProjectsPageState();
@@ -26,11 +26,11 @@ class _ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMix
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
     );
     _headingTextController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1200),
     );
 
     super.initState();
@@ -83,7 +83,7 @@ class _ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMix
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
 
-              if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+              if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
                 return Column(
                   children: _buildProjectsForMobile(
                     data: Data.projects,
@@ -92,7 +92,7 @@ class _ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMix
                   ),
                 );
               } else {
-                return Container(
+                return SizedBox(
                   height: (subHeight * (Data.projects.length)) + extra,
                   child: Stack(
                     children: _buildProjects(
@@ -105,15 +105,15 @@ class _ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMix
               }
             },
           ),
-          CustomSpacer(heightFactor: 0.1),
+          const CustomSpacer(heightFactor: 0.1),
           Container(
             child: Padding(
               padding: padding,
-              child: MainProjects(),
+              child: const MainProjects(),
             ),
           ),
-          CustomSpacer(heightFactor: 0.15),
-          AnimatedFooter(),
+          const CustomSpacer(heightFactor: 0.15),
+          const AnimatedFooter(),
         ],
       ),
     );
@@ -185,7 +185,7 @@ class _ProjectsPageState extends State<ProjectsPage> with TickerProviderStateMix
           ),
         ),
       );
-      items.add(CustomSpacer(
+      items.add(const CustomSpacer(
         heightFactor: 0.10,
       ));
     }

@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:shashank_dixit/values/values.dart';
@@ -16,17 +15,17 @@ class AppTheme {
     return ThemeData(
       colorScheme: colorScheme,
       textTheme: _textTheme,
-      iconTheme: IconThemeData(color: AppColors.white),
-      canvasColor: colorScheme.background,
-      appBarTheme: AppBarTheme(
-        color: AppColors.primaryColor,
+      iconTheme: const IconThemeData(color: AppColors.white),
+      canvasColor: colorScheme.surface,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: AppColors.primaryColor,
       ),
-      textSelectionTheme: TextSelectionThemeData(
+      textSelectionTheme: const TextSelectionThemeData(
         cursorColor: AppColors.black,
         selectionColor: AppColors.textSelectionColor,
         selectionHandleColor: AppColors.primaryColor,
       ),
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: colorScheme.surface,
       highlightColor: Colors.transparent,
 
       // accentColor: colorScheme.primary,
@@ -41,10 +40,7 @@ class AppTheme {
     // primaryVariant: AppColors.primaryColor,
     secondary: AppColors.secondaryColor,
     secondaryContainer: AppColors.black,
-    // secondaryVariant: AppColors.black,
-    background: AppColors.primaryColor,
     surface: AppColors.primaryColor,
-    onBackground: Colors.white,
     error: _lightFillColor,
     onError: _lightFillColor,
     onPrimary: _lightFillColor,
@@ -60,14 +56,14 @@ class AppTheme {
   static const _light = FontWeight.w300;
 
   static final TextTheme _textTheme = TextTheme(
-    displayLarge: TextStyle(
+    displayLarge: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_96,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    displayMedium: TextStyle(
+    displayMedium: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_60,
       color: AppColors.black,
@@ -80,7 +76,7 @@ class AppTheme {
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headlineMedium: TextStyle(
+    headlineMedium: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_34,
       color: AppColors.black,
@@ -93,14 +89,14 @@ class AppTheme {
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    titleLarge: TextStyle(
+    titleLarge: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_20,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    titleMedium: TextStyle(
+    titleMedium: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.secondaryColor,
@@ -113,7 +109,7 @@ class AppTheme {
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    bodyLarge: TextStyle(
+    bodyLarge: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.secondaryColor,
@@ -132,7 +128,7 @@ class AppTheme {
       fontStyle: FontStyle.normal,
       fontWeight: _medium,
     ),
-    bodySmall: TextStyle(
+    bodySmall: const TextStyle(
       fontFamily: StringConst.VISUELT_PRO,
       fontSize: Sizes.TEXT_SIZE_12,
       color: AppColors.white,

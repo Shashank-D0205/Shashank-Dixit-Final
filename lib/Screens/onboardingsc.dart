@@ -12,13 +12,13 @@ Color defaultLineColor = AppColors.accentColor2.withOpacity(0.35);
 class LoadingHomePageAnimation extends StatefulWidget {
   static const String loadingPageRoute = StringConst.LOADING_PAGE;
 
-  LoadingHomePageAnimation({
-    Key? key,
+  const LoadingHomePageAnimation({
+    super.key,
     required this.text,
     required this.style,
     required this.onLoadingDone,
     this.lineColor,
-  }) : super(key: key);
+  });
   final String text;
   final TextStyle? style;
   final VoidCallback onLoadingDone;
@@ -145,7 +145,7 @@ class _LoadingHomePageAnimationState extends State<LoadingHomePageAnimation>
 
 
     return _isAnimationOver
-        ? SizedBox(width: 0,height: 0,)
+        ? const SizedBox(width: 0,height: 0,)
         : Stack(
       children: [
         AnimatedContainer(
@@ -169,7 +169,7 @@ class _LoadingHomePageAnimationState extends State<LoadingHomePageAnimation>
             color: AppColors.black,
           ),
         ),
-        Container(
+        SizedBox(
           width: widthOfScreen(context),
           child: Center(
             child: Column(
@@ -178,8 +178,8 @@ class _LoadingHomePageAnimationState extends State<LoadingHomePageAnimation>
               children: [
                 Row(
                   children: [
-                    Spacer(),
-                    Container(
+                    const Spacer(),
+                    SizedBox(
                       width: textWidth,
                       child: FadeTransition(
                         opacity: fadeAnimation,
@@ -195,21 +195,21 @@ class _LoadingHomePageAnimationState extends State<LoadingHomePageAnimation>
                             alignment: Alignment.center,
                             child: AnimatedOpacity(
                               opacity: opacityAnimation.value,
-                              child: child,
                               duration: _scaleDuration,
+                              child: child,
                             ),
                           ),
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
-                SpaceH20(),
+                const SpaceH20(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
+                    SizedBox(
                       width: widthOfLeftLine,
                       child: Stack(
                         children: [
@@ -237,7 +237,7 @@ class _LoadingHomePageAnimationState extends State<LoadingHomePageAnimation>
                       animation: containerAnimation,
                       color: lineColor,
                     ),
-                    Container(
+                    SizedBox(
                       width: widthOfRightLine,
                       child: Stack(
                         children: [

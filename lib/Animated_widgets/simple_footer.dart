@@ -9,11 +9,11 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 class SimpleFooter extends StatelessWidget {
   const SimpleFooter({
-    Key? key,
+    super.key,
     this.height,
     this.width,
     this.backgroundColor = AppColors.black,
-  }) : super(key: key);
+  });
 
   final double? width;
   final double? height;
@@ -29,7 +29,7 @@ class SimpleFooter extends StatelessWidget {
         child: ResponsiveBuilder(
           builder: (context, sizingInformation) {
             if (sizingInformation.isMobile) {
-              return Column(
+              return const Column(
                 children: [
                   Spacer(flex: 2),
                   SimpleFooterSm(),
@@ -37,7 +37,7 @@ class SimpleFooter extends StatelessWidget {
                 ],
               );
             } else {
-              return Column(
+              return const Column(
                 children: [
                   Spacer(),
                   SimpleFooterLg(),
@@ -53,7 +53,7 @@ class SimpleFooter extends StatelessWidget {
 }
 
 class SimpleFooterSm extends StatelessWidget {
-  const SimpleFooterSm({Key? key}) : super(key: key);
+  const SimpleFooterSm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class SimpleFooterSm extends StatelessWidget {
     return Column(
       children: [
         Socials(socialData: Data.socialData),
-        SpaceH30(),
+        const SpaceH30(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -75,7 +75,7 @@ class SimpleFooterSm extends StatelessWidget {
             ),
           ],
         ),
-        SpaceH12(),
+        const SpaceH12(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -96,15 +96,15 @@ class SimpleFooterSm extends StatelessWidget {
             ),
           ],
         ),
-        SpaceH8(),
-        BuiltWithFlutter(),
+        const SpaceH8(),
+        const BuiltWithFlutter(),
       ],
     );
   }
 }
 
 class SimpleFooterLg extends StatelessWidget {
-  const SimpleFooterLg({Key? key}) : super(key: key);
+  const SimpleFooterLg({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ class SimpleFooterLg extends StatelessWidget {
             Socials(socialData: Data.socialData),
           ],
         ),
-        SpaceH20(),
+        const SpaceH20(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -129,7 +129,7 @@ class SimpleFooterLg extends StatelessWidget {
               StringConst.COPYRIGHT,
               style: style,
             ),
-            SpaceW8(),
+            const SpaceW8(),
             InkWell(
               onTap: () {
                 Functions.launchUrl(StringConst.DESIGN_LINK);
@@ -147,15 +147,15 @@ class SimpleFooterLg extends StatelessWidget {
             ),
           ],
         ),
-        SpaceH8(),
-        BuiltWithFlutter(),
+        const SpaceH8(),
+        const BuiltWithFlutter(),
       ],
     );
   }
 }
 
 class BuiltWithFlutter extends StatelessWidget {
-  const BuiltWithFlutter({Key? key}) : super(key: key);
+  const BuiltWithFlutter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +173,7 @@ class BuiltWithFlutter extends StatelessWidget {
           StringConst.BUILT_WITH_FLUTTER,
           style: style,
         ),
-        FlutterLogo(size: 14),
+        const FlutterLogo(size: 14),
         Text(
           " [DART] ",
           style: style,

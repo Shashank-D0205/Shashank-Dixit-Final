@@ -38,10 +38,10 @@ class EmailRepositoryImpl implements EmailRepository {
       return Right(emailStatus);
     } catch (e) {
       print(e.toString());
-      if (e == EmailFailure.serverError()) {
-        return Left(EmailFailure.serverError());
+      if (e == const EmailFailure.serverError()) {
+        return const Left(EmailFailure.serverError());
       } else {
-        return Left(EmailFailure.networkError());
+        return const Left(EmailFailure.networkError());
       }
     }
   }

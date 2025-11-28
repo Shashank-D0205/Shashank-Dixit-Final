@@ -21,12 +21,12 @@ List<String> titles = [
 
 class Aboutproject extends StatefulWidget {
   const Aboutproject({
-    Key? key,
+    super.key,
     required this.controller,
     required this.projectDataController,
     required this.projectData,
     required this.width,
-  }) : super(key: key);
+  });
 
   final AnimationController controller;
   final AnimationController projectDataController;
@@ -70,7 +70,7 @@ class _AboutprojectState extends State<Aboutproject> {
     double projectDataSpacing =
     responsiveSize(context, widget.width * 0.1, 48, md: 36);
     double widthOfProjectItem = (projectDataWidth - (projectDataSpacing)) / 2;
-    BorderRadiusGeometry borderRadius = BorderRadius.all(
+    BorderRadiusGeometry borderRadius = const BorderRadius.all(
       Radius.circular(100.0),
     );
     TextStyle? buttonStyle = textTheme.bodyLarge?.copyWith(
@@ -95,7 +95,7 @@ class _AboutprojectState extends State<Aboutproject> {
               fontSize: Sizes.TEXT_SIZE_48,
             ),
           ),
-          SpaceH40(),
+          const SpaceH40(),
           AnimatedPositionedText(
             controller: CurvedAnimation(
               parent: widget.controller,
@@ -107,7 +107,7 @@ class _AboutprojectState extends State<Aboutproject> {
             textStyle: bodyTextStyle,
           ),
           // SpaceH12(),
-          Container(
+          SizedBox(
             width: projectDataWidth,
             child: Wrap(
               spacing: projectDataSpacing,
@@ -134,23 +134,23 @@ class _AboutprojectState extends State<Aboutproject> {
               ],
             ),
           ),
-          widget.projectData.designer != null ? SizedBox(height: 30,) : SizedBox(width:0, height:0),
+          widget.projectData.designer != null ? const SizedBox(height: 30,) : const SizedBox(width:0, height:0),
           widget.projectData.designer != null
               ? ProjectData(
             controller: widget.projectDataController,
             title: StringConst.DESIGNER,
             subtitle: widget.projectData.designer!,
           )
-              : SizedBox(width:0, height:0),
-          widget.projectData.technologyUsed != null ? SizedBox(height: 30,) : SizedBox(width:0, height:0),
+              : const SizedBox(width:0, height:0),
+          widget.projectData.technologyUsed != null ? const SizedBox(height: 30,) : const SizedBox(width:0, height:0),
           widget.projectData.technologyUsed != null
               ? ProjectData(
             controller: widget.projectDataController,
             title: StringConst.TECHNOLOGY_USED,
             subtitle: widget.projectData.technologyUsed!,
           )
-              : SizedBox(width:0, height:0),
-          SpaceH30(),
+              : const SizedBox(width:0, height:0),
+          const SpaceH30(),
           Row(
             children: [
               widget.projectData.isLive
@@ -173,12 +173,12 @@ class _AboutprojectState extends State<Aboutproject> {
                   onTap: () {
                     Functions.launchUrl(widget.projectData.webUrl);
                   },
-                  startOffset: Offset(0, 0),
-                  targetOffset: Offset(0.1, 0),
+                  startOffset: const Offset(0, 0),
+                  targetOffset: const Offset(0.1, 0),
                 ),
               )
-                  : SizedBox(width:0, height:0),
-              widget.projectData.isLive ? Spacer() : SizedBox(width:0, height:0),
+                  : const SizedBox(width:0, height:0),
+              widget.projectData.isLive ? const Spacer() : const SizedBox(width:0, height:0),
               widget.projectData.isPublic
                   ? AnimatedPositionedWidget(
                 controller: CurvedAnimation(
@@ -196,20 +196,20 @@ class _AboutprojectState extends State<Aboutproject> {
                   height: initialWidth,
                   targetWidth: targetWidth,
                   titleStyle: buttonStyle,
-                  startOffset: Offset(0, 0),
-                  targetOffset: Offset(0.1, 0),
+                  startOffset: const Offset(0, 0),
+                  targetOffset: const Offset(0.1, 0),
                   onTap: () {
                     Functions.launchUrl(widget.projectData.gitHubUrl);
                   },
                 ),
               )
-                  : SizedBox(width:0, height:0),
-              widget.projectData.isPublic ? Spacer() : SizedBox(width:0, height:0),
+                  : const SizedBox(width:0, height:0),
+              widget.projectData.isPublic ? const Spacer() : const SizedBox(width:0, height:0),
             ],
           ),
           widget.projectData.isPublic || widget.projectData.isLive
-              ? SpaceH30()
-              : SizedBox(width:0, height:0),
+              ? const SpaceH30()
+              : const SizedBox(width:0, height:0),
           widget.projectData.isOnPlayStore
               ? InkWell(
             onTap: () {
@@ -229,7 +229,7 @@ class _AboutprojectState extends State<Aboutproject> {
               )
             ),
           )
-              : SizedBox(width:0, height:0),
+              : const SizedBox(width:0, height:0),
         ],
       ),
     );
@@ -238,14 +238,14 @@ class _AboutprojectState extends State<Aboutproject> {
 
 class ProjectData extends StatelessWidget {
   const ProjectData({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.controller,
     this.width = double.infinity,
     this.titleStyle,
     this.subtitleStyle,
-  }) : super(key: key);
+  });
 
   final String title;
   final String subtitle;
@@ -266,7 +266,7 @@ class ProjectData extends StatelessWidget {
       fontSize: 15,
     );
 
-    return Container(
+    return SizedBox(
       width: width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -280,7 +280,7 @@ class ProjectData extends StatelessWidget {
             text: title,
             textStyle: titleStyle ?? defaultTitleStyle,
           ),
-          SpaceH12(),
+          const SpaceH12(),
           AnimatedPositionedText(
             width: width,
             maxLines: 2,

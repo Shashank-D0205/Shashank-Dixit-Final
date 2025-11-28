@@ -20,10 +20,10 @@ const kDuration = Duration(milliseconds: 600);
 
 class PortofolioHP_header extends StatefulWidget {
   const PortofolioHP_header({
-    Key?key,
+    super.key,
     required this.ProjectsKey,
     required this.controller,
-    }) : super(key: key);
+    });
   final GlobalKey ProjectsKey;
   final AnimationController controller;
 
@@ -41,12 +41,12 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
   late Animation<Offset> scrollDownBtnAnimation;
   @override
   void initState(){
-    scrollDownButtonController=AnimationController(vsync: this, duration: Duration(milliseconds: 300),);
-    rotationController=AnimationController(vsync: this,duration: Duration(seconds: 20)).. repeat();
-    controller=AnimationController(vsync: this,duration: Duration(milliseconds: 1500))..repeat();
+    scrollDownButtonController=AnimationController(vsync: this, duration: const Duration(milliseconds: 300),);
+    rotationController=AnimationController(vsync: this,duration: const Duration(seconds: 20)).. repeat();
+    controller=AnimationController(vsync: this,duration: const Duration(milliseconds: 1500))..repeat();
     animation= Tween<Offset>(
-      begin: Offset(0, 0.05),
-      end: Offset(0, -0.05),
+      begin: const Offset(0, 0.05),
+      end: const Offset(0, -0.05),
     ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut),);
     controller.addStatusListener((status){
       if(status == AnimationStatus.completed){
@@ -121,14 +121,14 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
             margin: EdgeInsets.only(
               top: assignHeight(context, 0.1),
             ),
-            child: Align(
+            child: const Align(
               alignment: Alignment.bottomLeft,
               child: BackgroundCircle(),
             ),
           ),
           ResponsiveBuilder(builder: (context, sizingInformation){
             double screenWidth = sizingInformation.screenSize.width;
-            if(screenWidth<RefinedBreakpoints().tabletNormal){
+            if(screenWidth<const RefinedBreakpoints().tabletNormal){
               return Column(
                 children: [
                   Container(
@@ -158,7 +158,7 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
                   ),
                   Container(
                     padding: padding.copyWith(top: 0),
-                    child: Container(
+                    child: SizedBox(
                       width: screenWidth,
                       child: DevInfo(
                           controller: widget.controller,
@@ -175,7 +175,7 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
                 children: [
                   Container(
                     margin: textMargin,
-                    child: Container(
+                    child: SizedBox(
                       width: screenWidth*0.4,
                       child: DevInfo(
                           controller: widget.controller,
@@ -218,7 +218,7 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
               bottom: 0,
               child: ResponsiveBuilder(builder: (context, sizingInformation){
                 double screenWidth = sizingInformation.screenSize.width;
-                if(screenWidth<RefinedBreakpoints().tabletNormal){
+                if(screenWidth<const RefinedBreakpoints().tabletNormal){
                   return Container();
                 }
                 else{
@@ -231,13 +231,13 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
                       );
                     },
                     child: Container(
-                      margin: EdgeInsets.only(right: 24,bottom:40),
+                      margin: const EdgeInsets.only(right: 24,bottom:40),
                       child: MouseRegion(
                         onEnter: (e)=> scrollDownButtonController.forward(),
                         onExit: (e)=> scrollDownButtonController.reverse(),
                         child: AnimatedSlideTranstion(
                             controller: scrollDownButtonController,
-                            child: ScrollDownButton()
+                            child: const ScrollDownButton()
                         ),
                       ),
                     ),
@@ -255,7 +255,7 @@ class _PortofolioHP_headerState extends State<PortofolioHP_header>
 
 
 class BackgroundCircle extends StatelessWidget {
-  const BackgroundCircle({Key? key}) : super(key: key);
+  const BackgroundCircle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -279,11 +279,11 @@ class BackgroundCircle extends StatelessWidget {
 
 class DevInfo extends StatefulWidget {
   const DevInfo({
-    Key? key,
+    super.key,
     required this.controller,
     required this.width
 
-  }) : super(key: key);
+  });
 
   final AnimationController controller;
   final double width;
@@ -300,7 +300,7 @@ class _DevInfoState extends State<DevInfo> {
     EdgeInsetsGeometry margin = const EdgeInsets.only(left: 16);
     final CurvedAnimation curvedAnimation = CurvedAnimation(
       parent: widget.controller,
-      curve: Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
+      curve: const Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
     );
 
     double headerFontSize = responsiveSize(context, 28, 48, md: 36, sm: 32);
@@ -334,7 +334,7 @@ class _DevInfoState extends State<DevInfo> {
             ),
           ),
         ),
-        SizedBox(height: 12),
+        const SizedBox(height: 12),
         Container(
           margin: margin,
           child: AnimatedTextSlideBoxTransition(
@@ -354,7 +354,7 @@ class _DevInfoState extends State<DevInfo> {
             ),
           ),
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30,),
         Container(
           margin: margin,
           child: AnimatedPositionedText(
@@ -395,15 +395,15 @@ class _DevInfoState extends State<DevInfo> {
               ),
               fontWeight: FontWeight.w500,
             ),
-            startBorderRadius: BorderRadius.all(Radius.circular(100)),
+            startBorderRadius: const BorderRadius.all(Radius.circular(100)),
             imageColor: AppColors.black,
-            startOffset: Offset(0, 0),
-            targetOffset: Offset(0.1, 0),
+            startOffset: const Offset(0, 0),
+            targetOffset: const Offset(0.1, 0),
             targetWidth: 200,
             endBorderRadius: BorderRadius.circular(20),
           ),
         ),
-        SizedBox(height: 40,),
+        const SizedBox(height: 40,),
         Container(
           margin: margin,
           child: Wrap(

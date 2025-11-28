@@ -10,10 +10,10 @@ import '../screen_utils.dart';
 
 class AboutHeader extends StatelessWidget {
   const AboutHeader({
-    Key? key,
+    super.key,
     required this.width,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final double width;
   final AnimationController controller;
@@ -35,7 +35,7 @@ class AboutHeader extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
         double screenWidth = sizingInformation.screenSize.width;
-        if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+        if (screenWidth <= const RefinedBreakpoints().tabletSmall) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -43,7 +43,7 @@ class AboutHeader extends StatelessWidget {
                 controller: controller,
                 width: widthOfScreen(context),
               ),
-              SpaceH30(),
+              const SpaceH30(),
               ClipRRect(
                 borderRadius: BorderRadius.circular(80),
                 child: Image.asset(
@@ -91,10 +91,10 @@ class AboutHeader extends StatelessWidget {
 
 class AboutDescription extends StatelessWidget {
   const AboutDescription({
-    Key? key,
+    super.key,
     required this.controller,
     required this.width,
-  }) : super(key: key);
+  });
 
   final AnimationController controller;
   final double width;
@@ -118,7 +118,7 @@ class AboutDescription extends StatelessWidget {
             maxLines: 2,
             textStyle: style,
           ),
-          SpaceH8(),
+          const SpaceH8(),
           AnimatedTextSlideBoxTransition(
             controller: controller,
             text: StringConst.ABOUT_DEV_CATCH_LINE_2,
@@ -128,7 +128,7 @@ class AboutDescription extends StatelessWidget {
             textStyle: style,
           ),
 
-          SpaceH8(),
+          const SpaceH8(),
           AnimatedTextSlideBoxTransition(
             controller: controller,
             text: StringConst.ABOUT_DEV_CATCH_LINE_4,
@@ -136,7 +136,7 @@ class AboutDescription extends StatelessWidget {
             maxLines: 10,
             textStyle: style,
           ),
-          SpaceH8(),
+          const SpaceH8(),
           AnimatedTextSlideBoxTransition(
             controller: controller,
             text: StringConst.ABOUT_DEV_CATCH_LINE_5,

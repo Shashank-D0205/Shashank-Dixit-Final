@@ -10,10 +10,12 @@ import 'App_theme.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  runApp(PortfolioApp());
+  runApp(const PortfolioApp());
 }
 
 class PortfolioApp extends StatefulWidget {
+  const PortfolioApp({super.key});
+
   @override
   _PortfolioAppState createState() => _PortfolioAppState();
 }
@@ -28,7 +30,7 @@ class _PortfolioAppState extends State<PortfolioApp>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     _controller.forward();
   }

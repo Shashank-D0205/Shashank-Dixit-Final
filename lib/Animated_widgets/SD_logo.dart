@@ -3,12 +3,12 @@ import 'package:shashank_dixit/values/values.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({
-    Key? key,
+    super.key,
     this.title = "SD",
     this.titleColor = AppColors.black,
     this.titleStyle,
     this.fontSize = 60,
-  }) : super(key: key);
+  });
 
   final String title;
   final TextStyle? titleStyle;

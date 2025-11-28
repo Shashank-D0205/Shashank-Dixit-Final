@@ -3,7 +3,6 @@ import 'package:bloc/bloc.dart';
 import 'package:shashank_dixit/email/api/email_repository.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 
 part 'email_event.dart';
 part 'email_state.dart';
@@ -13,9 +12,9 @@ part 'email_bloc.freezed.dart';
 class EmailBloc extends Bloc<EmailEvent, EmailState> {
   final EmailRepository _emailRepository;
 
-  EmailState get initialState => EmailState.initial();
+  EmailState get initialState => const EmailState.initial();
 
-  EmailBloc(this._emailRepository) : super(EmailState.initial());
+  EmailBloc(this._emailRepository) : super(const EmailState.initial());
 
   @override
 
@@ -23,24 +22,22 @@ class EmailBloc extends Bloc<EmailEvent, EmailState> {
   Stream<EmailState> mapEventToState(
       EmailEvent event,
       ) async* {
-    if (event is EmailEvent) {
-      yield EmailState.sendingEmail();
+    yield const EmailState.sendingEmail();
 
-      final response = await _emailRepository.sendEmail(
-        name: event.name,
-        email: event.email,
-        subject: event.subject,
-        message: event.message,
-      );
+    final response = await _emailRepository.sendEmail(
+      name: event.name,
+      email: event.email,
+      subject: event.subject,
+      message: event.message,
+    );
 
-      yield* response.fold(
-            (failure) async* {
-          yield EmailState.failure();
-        },
-            (data) async* {
-          yield EmailState.emailSentSuccessFully();
-        },
-      );
+    yield* response.fold(
+          (failure) async* {
+        yield const EmailState.failure();
+      },
+          (data) async* {
+        yield const EmailState.emailSentSuccessFully();
+      },
+    );
     }
-  }
 }

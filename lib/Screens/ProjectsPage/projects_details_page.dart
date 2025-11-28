@@ -32,7 +32,7 @@ class ProjectDetailArguments {
 
 class ProjectDetailPage extends StatefulWidget {
   static const String projectDetailPageRoute = StringConst.PROJECT_DETAIL_PAGE;
-  const ProjectDetailPage({Key? key}) : super(key: key);
+  const ProjectDetailPage({super.key});
 
   @override
   _ProjectDetailPageState createState() => _ProjectDetailPageState();
@@ -137,7 +137,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
           parent: AlwaysScrollableScrollPhysics(),
         ),
         children: [
-          Container(
+          SizedBox(
             width: widthOfScreen(context),
             height: heightOfScreen(context),
             child: Stack(
@@ -163,7 +163,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
                           textStyle: coverTitleStyle,
                           textAlign: TextAlign.center,
                         ),
-                        SpaceH20(),
+                        const SpaceH20(),
                         AnimatedTextSlideBoxTransition(
                           controller: _controller,
                           widthFactor: 1.20,
@@ -189,9 +189,9 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
               ],
             ),
           ),
-          CustomSpacer(heightFactor: 0.15),
+          const CustomSpacer(heightFactor: 0.15),
           VisibilityDetector(
-            key: Key('about-project'),
+            key: const Key('about-project'),
             onVisibilityChanged: (visibilityInfo) {
               double visiblePercentage = visibilityInfo.visibleFraction * 100;
               if (visiblePercentage > 40) {
@@ -211,11 +211,11 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
               ),
             ),
           ),
-          CustomSpacer(heightFactor: 0.15),
+          const CustomSpacer(heightFactor: 0.15),
           ..._buildProjectAlbum(projectDetails.data.projectAssets),
           projectDetails.hasNextProject
-              ? CustomSpacer(heightFactor: 0.15)
-              : SizedBox(width: 0,height: 0,),
+              ? const CustomSpacer(heightFactor: 0.15)
+              : const SizedBox(width: 0,height: 0,),
           projectDetails.hasNextProject
               ? Padding(
             padding: padding,
@@ -235,11 +235,11 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
               ),
             ),
           )
-              : SizedBox(height: 0,width: 0,),
+              : const SizedBox(height: 0,width: 0,),
           projectDetails.hasNextProject
-              ? CustomSpacer(heightFactor: 0.15)
-              : SizedBox(width: 0,height: 0,),
-          SimpleFooter(),
+              ? const CustomSpacer(heightFactor: 0.15)
+              : const SizedBox(width: 0,height: 0,),
+          const SimpleFooter(),
         ],
       ),
     );

@@ -18,9 +18,9 @@ class StringConst {
 
   // Home Page
   static const String HI = "Hi,";
-  static const String DEV_INTRO = "Hi, I'm Shashank. A passionate Flutter Developer & Software Engineer(proficient in C++) based in India.";
+  static const String DEV_INTRO = "Hi, I'm Shashank. A passionate DevOps and cloud engineering enthusiast focused on automation, scalable systems, and CI/CD workflows in India.";
   static const String DEV_TITLE = "Software Engineer & ";
-  static const String DEV_DESC = "Flutter Developer";
+  static const String DEV_DESC = "DevOps & Cloud Enthusiast";
   static const String MY_PROJECTS = "My Projects";
   static const String SCROLL_DOWN = "Scroll Down";
   static const String CRAFTED_WITH_LOVE = "Crafted with love.";
@@ -53,24 +53,24 @@ class StringConst {
 
   // About Page
   static const String ABOUT_DEV_CATCH_LINE =
-      "I am a passionate flutter developer and a software engineer.";
-  static const String ABOUT_DEV_CATCH_LINE_1 = "I specialize in developing  ";
+      "I am a passionate DevOps and cloud engineering enthusiast and a dedicated software engineer.";
+  static const String ABOUT_DEV_CATCH_LINE_1 = "I specialize in implementing  ";
   static const String ABOUT_DEV_CATCH_LINE_2 =
-      "quality mobile applications.";
-  static const String ABOUT_DEV_CATCH_LINE_3 = "& web applications";
+      "reliable cloud automation.";
+  static const String ABOUT_DEV_CATCH_LINE_3 = "& scalable pipelines";
   static const String ABOUT_DEV_CATCH_LINE_4 = "I posses strong";
-  static const String ABOUT_DEV_CATCH_LINE_5 = "problem solving skills in development.";
-  static const String ABOUT_DEV_STORY = "Story";
+  static const String ABOUT_DEV_CATCH_LINE_5 = "problem solving skills in DevOps & Cloud.";
+  static const String ABOUT_DEV_STORY = "Journey";
   static const String ABOUT_DEV_STORY_TITLE =
       "A little bit about myself.";
   static const String ABOUT_DEV_STORY_CONTENT_1 =
-      "I am full stack app developer &  software engineer with great passion for building high quality applications. I have an extensive experience building frontend (mobile) and backend applications.";
+      "I am a DevOps engineer and software developer with strong passion for creating reliable automated systems. I have extensive experience building CI/CD workflows, cloud infrastructure, and backend automation pipelines.";
   static const String ABOUT_DEV_STORY_CONTENT_2 =
-      "I am currently pursuing Bachelor in Technology(2021-2025) from VIT Bhopal, majoring in CSE. I have strong technical skills as well as excellent interpersonal skills.";
+      "I have done Bachelor's in Technology(2021-2025) from VIT Bhopal, majoring in CSE. I possess strong technical expertise along with excellent teamwork and communication abilities.";
   static const String ABOUT_DEV_STORY_CONTENT_3 =
-      "I am very great at finding solutions to problems and I have a very keen eye for details. I enjoy building fun/useful projects in my free time and open sourcing them. I am passionate about reading, deeply appreciate all forms of art and music, and I love staying active and hitting the gym..";
+      "I excel at solving complex problems and maintain a sharp eye for detail. I enjoy creating useful automation projects in my free time and sharing them openly. I am passionate about learning, appreciate creativity and music, and love staying active through sports and workouts.";
   static const String ABOUT_DEV_TECHNOLOGY = "Technologies & Skills";
-  static const String MOBILE_TECH = "App Dev";
+  static const String MOBILE_TECH = "DevOps";
   static const String OTHER_TECH = "Other Technologies";
   static const String ABOUT_DEV_TECHNOLOGY_TITLE = "What I've worked with:";
   static const String ABOUT_DEV_TECHNOLOGY_CONTENT =
@@ -80,7 +80,7 @@ class StringConst {
   static const String ABOUT_DEV_CONTACT_EMAIL = "Email.";
   static const String WORK_TOGETHER = "Let's work together.";
   static const String AVAILABLE_FOR_WORK =
-      "Available for SDE Job & Opportunities.";
+      "Available for SRE/SDE/DevOps/System Job & Opportunities.";
   static const String SAY_HELLO = "Say Hello";
 
   // Works & Projects Page
@@ -116,8 +116,8 @@ class StringConst {
 
   static const String INTRO = "Hi, my name is";
   static const String DEV_NAME = "Shashank Dixit";
-  static const String PUNCH_LINE = "I use Flutter to craft engaging mobile experiences.";
-  static const String SPECIALITY = "FLUTTER DEV";
+  static const String PUNCH_LINE = "I use DevOps practices to build reliable automated systems";
+  static const String SPECIALITY = "DevOps & Cloud";
   static const String DESIGNED_IN = "Made in India with ";
   static const String BUILT_BY = "Built by Shashank Dixit ";
 
@@ -129,10 +129,10 @@ class StringConst {
   static const String MESSAGE_HINT_TEXT = "Message";
 
   //Skills
-  static const String FLUTTER = "Flutter";
-  static const String ANDROID = "Android";
-  static const String DART = "Dart";
-  static const String MySQL = "MySQL";
+  static const String FLUTTER = "Ansible";
+  static const String ANDROID = "AWS";
+  static const String DART = "Terraform";
+  static const String MySQL = "CI/CD(Jenkins/Github Actions)";
 
   //routes
   static const String LOADING_PAGE = "/";

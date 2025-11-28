@@ -17,16 +17,15 @@ class SocialData {
 }
 
 class Socials extends StatelessWidget {
-  Socials({
-    Key? key,
+   Socials({
+    super.key,
     required this.socialData,
     this.size = Sizes.ICON_SIZE_18,
     this.color = AppColors.white,
     this.spacing = Sizes.SIZE_40,
     this.runSpacing = Sizes.SIZE_16,
     this.isHorizontal = true,
-  })  : assert(socialData.length > 0),
-        super(key: key);
+  })  : assert(socialData.isNotEmpty);
 
   final List<SocialData> socialData;
   final double size;
@@ -65,7 +64,7 @@ class Socials extends StatelessWidget {
 
       // if it is vertical, add spaces
       if(!isHorizontal) {
-        items.add(SizedBox(height: 30,));
+        items.add(const SizedBox(height: 30,));
       }
     }
 

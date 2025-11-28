@@ -7,10 +7,10 @@ import '../Screens/screen_utils.dart';
 
 class PageHeader extends StatefulWidget {
   const PageHeader({
-    Key? key,
+    super.key,
     required this.headingText,
     required this.headingTextController,
-  }) : super(key: key);
+  });
 
   final String headingText;
   final AnimationController headingTextController;
@@ -28,12 +28,12 @@ class _PageHeaderState extends State<PageHeader>
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
     )..repeat();
 
     animation = Tween<Offset>(
-      begin: Offset(0, 0.5),
-      end: Offset(0, -0.5),
+      begin: const Offset(0, 0.5),
+      end: const Offset(0, -0.5),
     ).animate(
       CurvedAnimation(
         parent: controller,
@@ -68,7 +68,7 @@ class _PageHeaderState extends State<PageHeader>
         Sizes.TEXT_SIZE_60,
       ),
     );
-    return Container(
+    return SizedBox(
       width: widthOfScreen(context),
       height: heightOfScreen(context),
       child: Stack(
@@ -91,7 +91,7 @@ class _PageHeaderState extends State<PageHeader>
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: EdgeInsets.only(bottom: Sizes.MARGIN_40),
+              margin: const EdgeInsets.only(bottom: Sizes.MARGIN_40),
               child: AnimatedSlideTranstion(
                 controller: controller,
                 position: animation,
