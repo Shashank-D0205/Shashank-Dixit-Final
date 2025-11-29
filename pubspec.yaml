@@ -82,9 +82,8 @@ flutter:
     - assets/images/projects/YuvaAnubhav/
     - assets/images/projects/Curify/
     - assets/images/projects/SDev/
-    - assets/images/projects/KuberConfig_Generator/
-    - assets/images/projects/Cluster_NS_SA_RBAC/
-    
+    - assets/images/projects/DevOps/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
