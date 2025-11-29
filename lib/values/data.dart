@@ -184,13 +184,14 @@ class Data {
     Projects.KubeConfig_Generator,
     Projects.Cluster_base_automation,
     Projects.Azure_Rg_KV_setup_automation ,
-    Projects.Cluster_addons_automations,
-    Projects.Yuva_Anubhav,
-    Projects.CURIFY,
-    Projects.CV,
   ];
 
   static List<ProjectItemData> projects = [
+    Projects.KubeConfig_Generator,
+    Projects.Cluster_base_automation,
+    Projects.Azure_Rg_KV_setup_automation ,
+    Projects.Cluster_addons_automations,
+    Projects.Universal_CICD_Pipeline,
     Projects.Yuva_Anubhav,
     Projects.CURIFY,
     Projects.CV,
