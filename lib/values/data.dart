@@ -181,6 +181,10 @@ class Data {
   ];
 
   static List<ProjectItemData> recentWorks = [
+    Projects.KubeConfig_Generator,
+    Projects.Cluster_base_automation,
+    Projects.Azure_Rg_KV_setup_automation ,
+    Projects.Cluster_addons_automations,
     Projects.Yuva_Anubhav,
     Projects.CURIFY,
     Projects.CV,
@@ -241,6 +245,103 @@ class Data {
 }
 
 class Projects {
+  static ProjectItemData KubeConfig_Generator = ProjectItemData(
+    title: StringConst.KUBECONFIG_GENERATOR,
+    subtitle: StringConst.Kubeconfig_Generator_SUBTITLE,
+    platform: StringConst.Kubeconfig_Generator_PLATFORM,
+    primaryColor: AppColors.DevOpsAqua,
+    image: ImagePath.Yuva_Anubhav_Cover, //need to change
+    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
+    appLogoColor: AppColors.CurifyAppLogo,
+    projectAssets: [
+
+    ],
+    category: StringConst.Kubeconfig_Generator_CATEGORY,
+    portfolioDescription: StringConst.Kubeconfig_Generator_DETAIL,
+    isPublic: true,
+    isOnPlayStore: false,
+    technologyUsed: StringConst.KUBERNETES,
+    gitHubUrl: StringConst.Kubeconfig_Generator_REPO_URL,
+    // playStoreUrl: StringConst.Yuva_Anubhav_PLAYSTORE_URL,
+  );
+  static ProjectItemData Cluster_base_automation = ProjectItemData(
+    title: StringConst.CLUSTER_NS_SA_RBAC,
+    subtitle: StringConst.Cluster_NS_SA_RBAC_SUBTITLE,
+    platform: StringConst.Cluster_NS_SA_RBAC_PLATFORM,
+    primaryColor: AppColors.DevOpsBlue,
+    image: ImagePath.Yuva_Anubhav_Cover,
+    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
+    appLogoColor: AppColors.CurifyAppLogo,
+    projectAssets: [
+
+    ],
+    category: StringConst.Cluster_NS_SA_RBAC_CATEGORY,
+    portfolioDescription: StringConst.Cluster_NS_SA_RBAC_DETAIL,
+    isPublic: true,
+    isOnPlayStore: false,
+    technologyUsed: "${StringConst.KUBERNETES}, ${StringConst.AWS}, ${StringConst.AZURE}",
+    gitHubUrl: StringConst.Cluster_NS_SA_RBAC_REPO_URL,
+    //playStoreUrl: StringConst.Yuva_Anubhav_PLAYSTORE_URL,
+  );
+  static ProjectItemData Universal_CICD_Pipeline = ProjectItemData(
+    title: StringConst.UNIVERSAL_CICD_PIPELINE,
+    subtitle: StringConst.Universal_CICD_Pipeline_SUBTITLE,
+    platform: StringConst.Universal_CICD_Pipeline_PLATFORM,
+    primaryColor: AppColors.DevOpsOrange,
+    image: ImagePath.Yuva_Anubhav_Cover,
+    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
+    appLogoColor: AppColors.CurifyAppLogo,
+    projectAssets: [
+
+    ],
+    category: StringConst.Universal_CICD_Pipeline_CATEGORY,
+    portfolioDescription: StringConst.Universal_CICD_Pipeline_DETAIL,
+    isPublic: true,
+    isOnPlayStore: false,
+    technologyUsed: "${StringConst.KUBERNETES}, ${StringConst.AWS}, ${StringConst.GITHUB_ACTIONS}, ${StringConst.DOCKER}",
+    gitHubUrl: StringConst.Cluster_Addons_Installer_REPO_URL,
+  );
+  static ProjectItemData Azure_Rg_KV_setup_automation = ProjectItemData(
+    title: StringConst.AZURE_RG_KV_SETUP,
+    subtitle: StringConst.Azure_RG_KV_Setup_SUBTITLE,
+    platform: StringConst.Azure_RG_KV_Setup_PLATFORM,
+    primaryColor: AppColors.DevOpsGreen,
+    image: ImagePath.Yuva_Anubhav_Cover,
+    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
+    appLogoColor: AppColors.CurifyAppLogo,
+    projectAssets: [
+
+    ],
+    category: StringConst.Azure_RG_KV_Setup_CATEGORY,
+    portfolioDescription: StringConst.Azure_RG_KV_Setup_DETAIL,
+    isPublic: true,
+    isOnPlayStore: false,
+    technologyUsed: "${StringConst.AZURE}, ${StringConst.AZURE_KEY_VAULT}",
+    gitHubUrl: StringConst.Azure_RG_KV_Setup_REPO_URL,
+  );
+  static ProjectItemData Cluster_addons_automations = ProjectItemData(
+    title: StringConst.CLUSTER_ADDONS_INSTALLER,
+    subtitle: StringConst.Cluster_Addons_Installer_SUBTITLE,
+    platform: StringConst.Cluster_Addons_Installer_PLATFORM,
+    primaryColor: AppColors.DevOpsDark,
+    image: ImagePath.Yuva_Anubhav_Cover,
+    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
+    appLogoColor: AppColors.CurifyAppLogo,
+    projectAssets: [
+
+    ],
+    category: StringConst.Cluster_Addons_Installer_CATEGORY,
+    portfolioDescription: StringConst.Cluster_Addons_Installer_DETAIL,
+    isPublic: true,
+    isOnPlayStore: false,
+    technologyUsed: "${StringConst.KUBERNETES}, ${StringConst.GITHUB_ACTIONS}, ${StringConst.ANSIBLE}",
+    gitHubUrl: StringConst.Cluster_Addons_Installer_REPO_URL,
+  );
   static ProjectItemData Yuva_Anubhav = ProjectItemData(
     title: StringConst.YuvaAnubhav,
     subtitle: StringConst.Yuva_Anubhav_SUBTITLE,

@@ -130,10 +130,67 @@ class StringConst {
   static const String MESSAGE_HINT_TEXT = "Message";
 
   //Skills
-  static const String FLUTTER = "Ansible";
-  static const String ANDROID = "AWS";
-  static const String DART = "Terraform";
-  static const String MySQL = "CI/CD(Jenkins/Github Actions)";
+  // Core Cloud & DevOps
+  static const String KUBERNETES = "Kubernetes";
+  static const String HELM = "Helm";
+  static const String AZURE = "Azure";
+  static const String GCP = "GCP";
+  static const String DOCKER = "Docker";
+  static const String GITHUB_ACTIONS = "GitHub Actions";
+  static const String ANSIBLE = "Ansible";
+
+// Azure-specific
+  static const String AZURE_KEY_VAULT = "Azure Key Vault";
+  static const String AZURE_RESOURCE_GROUP = "Azure Resource Groups";
+  static const String AZURE_WORKLOAD_IDENTITY = "Azure Workload Identity";
+  static const String AZURE_KV_SECRETS = "Azure KV Secrets";
+
+// AWS-specific
+  static const String AWS_ECR = "AWS ECR";
+  static const String AWS_IAM = "AWS IAM";
+
+// CI/CD + Automation
+  static const String CICD_PIPELINES = "CI/CD Pipelines";
+  static const String CONTAINER_REGISTRY = "Container Registries";
+  static const String AUTOMATION = "Cloud Automation";
+
+// Kubernetes Addons
+  static const String CERT_MANAGER = "Cert-Manager";
+  static const String CLUSTER_ISSUER = "ClusterIssuer";
+  static const String INGRESS_NGINX = "NGINX Ingress Controller";
+  static const String EXTERNAL_DNS = "External-DNS";
+  static const String ECR_CREDENTIAL_OPERATOR = "ECR Credential Operator";
+
+// Kubernetes Objects
+  static const String K8S_NAMESPACE = "K8s Namespace";
+  static const String K8S_SERVICE_ACCOUNT = "K8s ServiceAccount";
+  static const String K8S_RBAC = "K8s RBAC";
+  static const String K8S_ROLE = "K8s Role";
+  static const String K8S_ROLE_BINDING = "K8s RoleBinding";
+  static const String K8S_SECRETS = "K8s Secrets";
+  static const String K8S_DEPLOYMENTS = "K8s Deployments";
+
+// Languages & App Stacks
+  static const String PYTHON = "Python";
+  static const String DJANGO = "Django";
+  static const String FASTAPI = "FastAPI";
+  static const String JAVASCRIPT = "JavaScript";
+  static const String TYPESCRIPT = "TypeScript";
+  static const String REACT = "React";
+  static const String WORKERS = "Background Workers";
+
+// Tools & Other Tech
+  static const String BASH = "Bash";
+  static const String YAML = "YAML";
+  static const String TERRAFORM = "Terraform"; // optional
+  static const String BICEP = "Azure Bicep"; // optional
+  static const String LINUX = "Linux";
+  static const String GIT = "Git";
+
+  static const String FLUTTER = "Flutter";
+  static const String ANDROID = "Android";
+  static const String DART = "Dart";
+  static const String MySQL = "MySQL";
 
   //routes
   static const String LOADING_PAGE = "/";
@@ -186,6 +243,101 @@ class StringConst {
 
 
   //Portfolio, Projects
+  static const String KUBECONFIG_GENERATOR = "Kubeconfig Generator";
+  static const String Kubeconfig_Generator_PLATFORM = "DevOps / Kubernetes Tool";
+  static const String Kubeconfig_Generator_CATEGORY = "Kubernetes Access Automation";
+  static const String Kubeconfig_Generator_SUBTITLE =
+      "A cloud-agnostic namespace-scoped kubeconfig generator using ServiceAccounts with non-expiring tokens.";
+  static const String Kubeconfig_Generator_DETAIL =
+      "Developed a cloud-agnostic workflow to generate namespace-scoped Kubernetes kubeconfigs using ServiceAccounts. "
+      "Automates namespace creation, RBAC setup, token generation, and builds admin/readonly kubeconfigs for secure and non-expiring access. "
+      "Compatible with all Kubernetes distributions including EKS, AKS, GKE, on-prem clusters, Rancher, and K3s.";
+  static const String Kubeconfig_Generator_REPO_URL =
+      "https://github.com/Shashank-D0205/Kubeconfig-generator";
+  static const String Kubeconfig_Generator_DOCS_URL = "";
+
+  // Project: Cluster Addons Installer
+  static const String CLUSTER_ADDONS_INSTALLER = "Cluster Addons Installer";
+  static const String Cluster_Addons_Installer_PLATFORM =
+      "DevOps / Kubernetes Automation";
+  static const String Cluster_Addons_Installer_CATEGORY =
+      "Cluster Addon Deployment";
+
+  static const String Cluster_Addons_Installer_SUBTITLE =
+      "Automated installation of essential Kubernetes addons using GitHub Actions and Ansible.";
+
+  static const String Cluster_Addons_Installer_DETAIL =
+      "Built a fully automated pipeline using GitHub Actions and Ansible to bootstrap Kubernetes clusters "
+      "with essential addons such as Cert-Manager, ClusterIssuer, NGINX Ingress Controller, and External-DNS. "
+      "Ensures consistent, repeatable baseline cluster configuration across environments using CI/CD-driven automation.";
+
+  static const String Cluster_Addons_Installer_REPO_URL =
+      "https://github.com/Shashank-D0205/Cluster-Addons-Automation";
+
+  static const String Cluster_Addons_Installer_DOCS_URL = ""; // optional
+  // Project: Cluster-NS-SA-RBAC-AWS-Azure-services-Automation
+  static const String CLUSTER_NS_SA_RBAC =
+      "Cluster-NS-SA-RBAC-AWS-Azure-Automation";
+
+  static const String Cluster_NS_SA_RBAC_PLATFORM =
+      "Kubernetes / Multi-Cloud Automation";
+
+  static const String Cluster_NS_SA_RBAC_CATEGORY =
+      "RBAC + Namespace Provisioning";
+
+  static const String Cluster_NS_SA_RBAC_SUBTITLE =
+      "Automated namespace onboarding workflow integrating Azure Key Vault, Azure Workload Identity, and AWS ECR.";
+
+  static const String Cluster_NS_SA_RBAC_DETAIL =
+      "Implemented a multi-cloud Kubernetes automation pipeline using GitHub Actions. "
+      "Automatically provisions namespaces, ServiceAccounts, Roles, RoleBindings, Azure Workload Identity annotations, "
+      "and AWS ECR Credential Operator manifests. Enables secure secret retrieval from Azure Key Vault and automated "
+      "image pulling from AWS ECR for workloads.";
+
+  static const String Cluster_NS_SA_RBAC_REPO_URL =
+      "https://github.com/Shashank-D0205/Cluster-NS-SA-RBAC-AWS-Azure-services-Automation";
+  // Project: Azure Resource Group & Key Vault Setup
+  static const String AZURE_RG_KV_SETUP =
+      "Azure Resource Group & Key Vault Setup";
+
+  static const String Azure_RG_KV_Setup_PLATFORM =
+      "Cloud Automation / Azure";
+
+  static const String Azure_RG_KV_Setup_CATEGORY =
+      "Infrastructure Provisioning";
+
+  static const String Azure_RG_KV_Setup_SUBTITLE =
+      "GitHub Actions workflow for automated Azure Resource Group and Key Vault provisioning.";
+
+  static const String Azure_RG_KV_Setup_DETAIL =
+      "Developed an idempotent GitHub Actions-based automation to create and manage Azure Resource Groups and Key Vaults. "
+      "Includes SPN-based secure authentication, input validation, and safe re-runs. Designed for application onboarding, "
+      "environment provisioning, CI/CD bootstrap, and enterprise-grade secret management.";
+
+  static const String Azure_RG_KV_Setup_REPO_URL =
+      "https://github.com/Shashank-D0205/Azure-Rg-KV-setup-automation";
+  // Project: Universal CI/CD Pipeline
+  static const String UNIVERSAL_CICD_PIPELINE =
+      "Universal CI/CD Pipeline — AWS ECR + Any Kubernetes Cluster";
+
+  static const String Universal_CICD_Pipeline_PLATFORM =
+      "DevOps / CI/CD / Kubernetes";
+
+  static const String Universal_CICD_Pipeline_CATEGORY =
+      "Cloud-Agnostic CI/CD System";
+
+  static const String Universal_CICD_Pipeline_SUBTITLE =
+      "Reusable CI/CD framework to build, push, and deploy any application using AWS ECR and Kubernetes.";
+
+  static const String Universal_CICD_Pipeline_DETAIL =
+      "Created a cloud-agnostic CI/CD architecture with generic Dockerfiles and GitHub Actions pipelines capable of building, "
+      "pushing, and deploying any microservice (Django, FastAPI, Workers, React) to any Kubernetes cluster. "
+      "Implements ECR authentication, image publishing, Kubernetes rolling updates, and namespace-agnostic deployments using "
+      "pure kubectl—making the solution fully portable across EKS, AKS, GKE, on-prem, and lightweight clusters.";
+
+  static const String Universal_CICD_Pipeline_REPO_URL =
+      "https://github.com/<your-repo>/universal-cicd-pipeline";
+
 
   static const String YuvaAnubhav = "YuvaAnubhav";
   static const String Yuva_Anubhav_PLATFORM = "Android.";

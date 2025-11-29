@@ -46,6 +46,11 @@ class AppColors {
   static const Color Curify = Color(0xFF2E524B);
   static const Color CurifySelectedNavTitle = Color(0xFF7D54A9);
   static const Color CurifyAppLogo = Color(0xFF7D54A9);
+  static const Color DevOpsBlue = Color(0xFF1E90FF);      // Kubernetes blue
+  static const Color DevOpsDark = Color(0xFF0D1117);      // GitHub dark
+  static const Color DevOpsAqua = Color(0xFF00A8E8);      // Cloud-native aqua
+  static const Color DevOpsOrange = Color(0xFFF68B1E);    // Docker orange accent
+  static const Color DevOpsGreen = Color(0xFF2EB67D);     // CI/CD success green
 
   static const Color login_catalog = Color(0xFFC95089);
   static const Color loginCatalogNavTitle = Color(0xFF2F3446);
@@ -78,4 +83,6 @@ class AppColors {
   static const Color outfitrNavTitle = Color(0xFF0A0E32);
   static const Color outfitrSelectedNavTitle = Color(0xFF377F8C);
   static const Color outfitrAppLogo = Color(0xFF2DB8AF);
+
+
 }
