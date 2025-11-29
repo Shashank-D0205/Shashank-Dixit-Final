@@ -251,8 +251,8 @@ class Projects {
     subtitle: StringConst.Kubeconfig_Generator_SUBTITLE,
     platform: StringConst.Kubeconfig_Generator_PLATFORM,
     primaryColor: AppColors.DevOpsAqua,
-    image: ImagePath.Yuva_Anubhav_Cover, //need to change
-    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    image: ImagePath.Kubeconfig_gen_Cover, //need to change
+    coverUrl: ImagePath.Kubeconfig_gen_Screens,
     navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
     appLogoColor: AppColors.CurifyAppLogo,
     projectAssets: [

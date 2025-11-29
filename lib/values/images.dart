@@ -43,6 +43,20 @@ class ImagePath {
       "$projectsDir/YuvaAnubhav/9.png";
   static const String Yuva_Anubhav_Screens =
       "$projectsDir/YuvaAnubhav/9.png";
+  static const String Kubeconfig_gen_Cover =
+      "$projectsDir/DevOps/Kubeconfig_gen.png";
+  static const String Kubeconfig_gen_Screens =
+      "$projectsDir/DevOps/Kubeconfig_gen.png";
+  // static const String Yuva_Anubhav_Cover =
+  //     "$projectsDir/YuvaAnubhav/9.png";
+  // static const String Yuva_Anubhav_Screens =
+  //     "$projectsDir/YuvaAnubhav/9.png";static const String Yuva_Anubhav_Cover =
+  //     "$projectsDir/YuvaAnubhav/9.png";
+  // static const String Yuva_Anubhav_Screens =
+  //     "$projectsDir/YuvaAnubhav/9.png";static const String Yuva_Anubhav_Cover =
+  //     "$projectsDir/YuvaAnubhav/9.png";
+  // static const String Yuva_Anubhav_Screens =
+  //     "$projectsDir/YuvaAnubhav/9.png";
   //
   // static const String DISNEY_PLUS_1 =
   //     "$projectsDir/disneyplus/disneyplus_header.png";
