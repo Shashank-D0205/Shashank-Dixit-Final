@@ -47,13 +47,15 @@ class ImagePath {
       "$projectsDir/DevOps/Kubeconfig_gen.png";
   static const String Kubeconfig_gen_Screens =
       "$projectsDir/DevOps/Kubeconfig_gen.png";
+  static const String Cluster_NS_Cover =
+      "$projectsDir/DevOps/Cluster_NS.jpg";
+  static const String Cluster_NS_Screens =
+      "$projectsDir/DevOps/Cluster_NS.jpg";
+  static const String Azure_RG_Cover =
+      "$projectsDir/DevOps/Azure.jpg";
+  static const String Azure_RG_Screens =
+      "$projectsDir/DevOps/Azure.jpg";
   // static const String Yuva_Anubhav_Cover =
-  //     "$projectsDir/YuvaAnubhav/9.png";
-  // static const String Yuva_Anubhav_Screens =
-  //     "$projectsDir/YuvaAnubhav/9.png";static const String Yuva_Anubhav_Cover =
-  //     "$projectsDir/YuvaAnubhav/9.png";
-  // static const String Yuva_Anubhav_Screens =
-  //     "$projectsDir/YuvaAnubhav/9.png";static const String Yuva_Anubhav_Cover =
   //     "$projectsDir/YuvaAnubhav/9.png";
   // static const String Yuva_Anubhav_Screens =
   //     "$projectsDir/YuvaAnubhav/9.png";

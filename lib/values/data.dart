@@ -250,7 +250,7 @@ class Projects {
     title: StringConst.KUBECONFIG_GENERATOR,
     subtitle: StringConst.Kubeconfig_Generator_SUBTITLE,
     platform: StringConst.Kubeconfig_Generator_PLATFORM,
-    primaryColor: AppColors.DevOpsAqua,
+    primaryColor: AppColors.DevOpsDark,
     image: ImagePath.Kubeconfig_gen_Cover, //need to change
     coverUrl: ImagePath.Kubeconfig_gen_Screens,
     navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
@@ -271,8 +271,8 @@ class Projects {
     subtitle: StringConst.Cluster_NS_SA_RBAC_SUBTITLE,
     platform: StringConst.Cluster_NS_SA_RBAC_PLATFORM,
     primaryColor: AppColors.DevOpsBlue,
-    image: ImagePath.Yuva_Anubhav_Cover,
-    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    image: ImagePath.Cluster_NS_Cover,
+    coverUrl: ImagePath.Cluster_NS_Screens,
     navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
     appLogoColor: AppColors.CurifyAppLogo,
     projectAssets: [
@@ -310,8 +310,8 @@ class Projects {
     subtitle: StringConst.Azure_RG_KV_Setup_SUBTITLE,
     platform: StringConst.Azure_RG_KV_Setup_PLATFORM,
     primaryColor: AppColors.DevOpsGreen,
-    image: ImagePath.Yuva_Anubhav_Cover,
-    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    image: ImagePath.Azure_RG_Cover,
+    coverUrl: ImagePath.Azure_RG_Screens,
     navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
     appLogoColor: AppColors.CurifyAppLogo,
     projectAssets: [
@@ -329,8 +329,8 @@ class Projects {
     subtitle: StringConst.Cluster_Addons_Installer_SUBTITLE,
     platform: StringConst.Cluster_Addons_Installer_PLATFORM,
     primaryColor: AppColors.DevOpsDark,
-    image: ImagePath.Yuva_Anubhav_Cover,
-    coverUrl: ImagePath.Yuva_Anubhav_Screens,
+    image: ImagePath.Cluster_NS_Cover,
+    coverUrl: ImagePath.Cluster_NS_Screens,
     navSelectedTitleColor: AppColors.CurifySelectedNavTitle,
     appLogoColor: AppColors.CurifyAppLogo,
     projectAssets: [
